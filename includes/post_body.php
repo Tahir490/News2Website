@@ -1,0 +1,1 @@
+ <div class="post_body">This is body </div>
