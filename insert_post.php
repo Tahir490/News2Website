@@ -14,35 +14,35 @@
  </tr>
  <tr>
    <td align="right">Post Page1</td>
-   <td><input type="file" name="page1"></td>
+   <td><input type="file" name="img2"></td>
  </tr>
  <tr>
    <td align="right">Post Page2</td>
-   <td><input type="file" name="page2"></td>
+   <td><input type="file" name="img2"></td>
  </tr>
  <tr>
    <td align="right">Post Page3</td>
-   <td><input type="file" name="page3"></td>
+   <td><input type="file" name="img3"></td>
  </tr>
  <tr>
    <td align="right">Post Page4</td>
-   <td><input type="file" name="page4"></td>
+   <td><input type="file" name="img4"></td>
  </tr>
  <tr>
    <td align="right">Post Page5</td>
-   <td><input type="file" name="page5"></td>
+   <td><input type="file" name="img5"></td>
  </tr>
  <tr>
    <td align="right">Post Page6</td>
-   <td><input type="file" name="page6"></td>
+   <td><input type="file" name="img6"></td>
  </tr>
  <tr>
    <td align="right">Post Page7</td>
-   <td><input type="file" name="page7"></td>
+   <td><input type="file" name="img7"></td>
  </tr>
  <tr>
    <td align="right">Post Page8</td>
-   <td><input type="file" name="page8"></td>
+   <td><input type="file" name="img8"></td>
  </tr>
  <tr>
    <td align="center" colspan="5"><input type="submit" name="submit" value="Publish Now"></td>
