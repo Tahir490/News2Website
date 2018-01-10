@@ -1,0 +1,59 @@
+body {
+width:980px;
+margin:auto;
+padding:auto;
+font-size:12px;
+font-family:arial;
+border:1px solid #CCCCCC;
+border-bottom:none;
+border-top:none;
+}
+#header {
+background-color:#0099FF; height:60px; padding:15px 0;
+}
+
+#footer {
+height:80px; background:#0099FF; 
+}
+#menubar {
+width:980px; height:30px; background:#0099FF; clear:both;
+}
+#breakingnews {
+width:980px; height:35px;
+}
+.news {
+float:right; background: url(images1/latest.jpg) no-repeat; width:79px; height:25px; margin-top:5px; padding-right:5px;
+}
+#maincontent {
+min-height:500px; height:auto; margin-top:10px; margin-bottom:10px;
+}
+#thumbs {
+ height:110px; background:#00CCFF; border-bottom:5px solid #005BCB; border-top:5px solid #ffffff;
+}
+#footer {
+height:80px; background:#0099FF; 
+}
+#footernav{
+padding:10px; width:450px; float:left; text-align:center; 
+}
+#footernav a {
+color:#FFFFFF; margin:10px; text-decoration:none;
+}
+#footernav a:hover {
+font-weight:bold; color:#0033CC;
+}
+.copyrights a {
+text-decoration:none; color:#FFFFFF; font-weight:bold;
+}
+.copyrights a:hover {
+text-decoration:none; color:#0033CC;
+}
+.copyrights {
+padding:15px; color:#FFFFFF; float:left;
+}
+.icons {
+float:right; padding-right:10px; padding-top:5px;
+}
+.iconimage {
+padding:5px; 
+}
