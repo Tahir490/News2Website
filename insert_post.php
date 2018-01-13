@@ -1,116 +1,148 @@
-<html>
-<head>
- <title>Insert News</title>
-</head>
-<body>
-<form method="post" action="insert_post.php" enctype="multipart/form-data">
-<table align="center" border="10" width="600">
- <tr>
-  <td align="center" colspan="5" bgcolor="yellow"><h1>Insert New Post Here</h1></td>
- </tr>
- <tr>
-   <td align="right">Post Title</td>
-   <td ><input type="text" name="title" size="50"></td>
- </tr>
- <tr>
-   <td align="right">Post Page1</td>
-   <td><input type="file" name="img2"></td>
- </tr>
- <tr>
-   <td align="right">Post Page2</td>
-   <td><input type="file" name="img2"></td>
- </tr>
- <tr>
-   <td align="right">Post Page3</td>
-   <td><input type="file" name="img3"></td>
- </tr>
- <tr>
-   <td align="right">Post Page4</td>
-   <td><input type="file" name="img4"></td>
- </tr>
- <tr>
-   <td align="right">Post Page5</td>
-   <td><input type="file" name="img5"></td>
- </tr>
- <tr>
-   <td align="right">Post Page6</td>
-   <td><input type="file" name="img6"></td>
- </tr>
- <tr>
-   <td align="right">Post Page7</td>
-   <td><input type="file" name="img7"></td>
- </tr>
- <tr>
-   <td align="right">Post Page8</td>
-   <td><input type="file" name="img8"></td>
- </tr>
- <tr>
-   <td align="center" colspan="5"><input type="submit" name="submit" value="Publish Now"></td>
- </tr>
-</table>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
+    <title>Admin</title>
+  </head>
+  <body>
+  	<p><br/><br/></p>
+  	<div class="container">
+  		
+  		<form method="post" action="" enctype="multipart/form-data">
+        <center>
+            <div><h2 class="heading">Upload Your Pictures</h2></div>
+        </center>
+  <div class="form-group">
+    <label for="img">Picture 1:</label>
+    <input type="file" name="image1" class="form-control" id="img"  >
+    
+  </div>
+ <div class="form-group">
+    <label for="img">Picture 2:</label>
+    <input type="file" name="image2" class="form-control" id="img"  >
+    
+  </div>
+  <div class="form-group">
+    <label for="img">Picture 3:</label>
+    <input type="file" name="image3" class="form-control" id="img"  >
+    
+  </div>
+ <div class="form-group">
+    <label for="img">Picture 4:</label>
+    <input type="file" name="image4" class="form-control" id="img"  >
+    
+  </div>
+ <div class="form-group">
+    <label for="img">Picture 5:</label>
+    <input type="file" name="image5" class="form-control" id="img"  >
+    
+  </div>
+ <div class="form-group">
+    <label for="img">Picture 6:</label>
+    <input type="file" name="image6" class="form-control" id="img"  >
+    
+  </div>
+<div class="form-group">
+    <label for="img">Picture 7:</label>
+    <input type="file" name="image7" class="form-control" id="img"  >
+    
+  </div>
+  <div class="form-group">
+    <label for="img">Picture 8:</label>
+    <input type="file" name="image8" class="form-control" id="img"  >
+    
+  </div>
+ 
+  
+  <button type="submit" name="btn" class="btn btn-success">Upload</button>
 </form>
-</body>
+  	</div>
+
+
+
+  
+   
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+  </body>
 </html>
+
+
+
 <?php
+  
   include("includes/connect.php");
-   if(isset($_POST['submit'])){
-	  
-	  $title=$_POST['title'];
-	  $date=date('m-d-y');
-	  $page1_name=$_FILES['page1']['name'];
-	        $page1_type=$_FILES['page1']['type'];
-			$page1_size=$_FILES['page1']['size'];
-			$page1_tmp=$_FILES['page1']['tmp_name'];
-	  $page2_name=$_FILES['page2']['name'];
-	        $page2_type=$_FILES['page2']['type'];
-			$page2_size=$_FILES['page2']['size'];
-			$page2_tmp=$_FILES['page2']['tmp_name'];
-	  $page3_name=$_FILES['page3']['name'];
-	        $page3_type=$_FILES['page3']['type'];
-			$page3_size=$_FILES['page3']['size'];
-			$page3_tmp=$_FILES['page3']['tmp_name'];
-	  $page4_name=$_FILES['page4']['name'];
-	        $page4_type=$_FILES['page4']['type'];
-			$page4_size=$_FILES['page4']['size'];
-			$page4_tmp=$_FILES['page4']['tmp_name'];
-	  $page5_name=$_FILES['page5']['name'];
-	        $page5_type=$_FILES['page5']['type'];
-			$page5_size=$_FILES['page5']['size'];
-			$page5_tmp=$_FILES['page5']['tmp_name'];
-	  $page6_name=$_FILES['page6']['name'];
-	        $page6_type=$_FILES['page6']['type'];
-			$page6_size=$_FILES['page6']['size'];
-			$page6_tmp=$_FILES['page6']['tmp_name'];
-	  $page7_name=$_FILES['page7']['name'];
-	        $page7_type=$_FILES['page7']['type'];
-			$page7_size=$_FILES['page7']['size'];
-			$page7_tmp=$_FILES['page7']['tmp_name'];
-	  $page8_name=$_FILES['page8']['name'];
-	        $page8_type=$_FILES['page8']['type'];
-			$page8_size=$_FILES['page8']['size'];
-			$page8_tmp=$_FILES['page8']['tmp_name'];
-			
-	if($title=='' or $page1=='' or $page2=='' or $page3=='' or $page4=='' or $page5=='' or $page6 =='' or $page7=='' or $page8=='')
-	{
-		echo "<script>alert('Any field is empty')</script>";
-		exit();
-	}
-	  if($page1_type== "page1/jpeg" or $page1_type=="page1/png" or $page1_type=="page1/gif"){
-		  if($page1_size<=50000){
-			  move_uploaded_file($page1_tmp,"images/$page1_name");
-		  }
-		  else{
-			  echo "<script>alert('Image is large, only 50kb size is allowed')</script>";
-		  }
-		  //else{
-			  //echo "<script>alert('Image type is invalid')</script>";
-	  //}
-	  $query="insert into news(news_title,news_date,page1,page2,page3,page4,page5,page6,page7,page8)
-	  values('$title','$date','$page1','$page2','$page3','$page4','$page5','$page6',$page7','$page8')";
-	  if(mysql_query($query)){
-		  echo "<center><h1>News has been Published</h1></center>";
-	  }
-  }
-   }
-?>
+  date_default_timezone_set("Asia/Karachi");
+if(isset($_POST["btn"])){     
+        $errors = array();
+         
+        $extension = array("jpeg","jpg","png","gif");
+         
+        $bytes = 1024;
+        $allowedKB = 1000;
+        $totalBytes = $allowedKB * $bytes;
+         
+        if(isset($_FILES["files"])==false)
+        {
+            echo "<b>Please, Select the files to upload!!!</b>";
+            return;
+        }
+         
+       
+         
+        foreach($_FILES["files"]["tmp_name"] as $key=>$tmp_name)
+        {
+            $uploadThisFile = true;
+             
+            $file_name=$_FILES["files"]["name"][$key];
+            $file_tmp=$_FILES["files"]["tmp_name"][$key];
+             
+            $ext=pathinfo($file_name,PATHINFO_EXTENSION);
+ 
+            if(!in_array(strtolower($ext),$extension))
+            {
+                array_push($errors, "File type is invalid. Name:- ".$file_name);
+                $uploadThisFile = false;
+            }               
+             
+            if($_FILES["files"]["size"][$key] > $totalBytes){
+                array_push($errors, "File size must be less than 100KB. Name:- ".$file_name);
+                $uploadThisFile = false;
+            }
+             
+            if($uploadThisFile){
+                $filename=basename($file_name,$ext);
+                $newFileName=$filename.$ext;                
+                move_uploaded_file($_FILES["files"]["tmp_name"][$key],"images/".$newFileName);
+                 
+                $query = "INSERT INTO pages(date_to, file_name) VALUES('".date("Y-m-d")."','".$newFileName."')";
+
+                mysqli_query($con, $query); 
+
+                echo "<script>alert('Pictures has been uploaded...')</script>"; 
+                 
+                           
+            }
+        }
+         
+        mysqli_close($con);
+         
+        $count = count($errors);
+         
+        if($count != 0){
+            foreach($errors as $error){
+                echo $error."<br/>";
+            }
+        }       
+    }
+
+  ?>  

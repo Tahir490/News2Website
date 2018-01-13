@@ -131,22 +131,51 @@
 <div id="thumbs">
 <table width="100%">
 <tr>
+
+  
 <td width="5%" valign="top">
 <a href="/index.php?pageNum_thumbs=0&totalRows_thumbs=8">
 <img src="images1/left.jpg" border="0" title="prev" /></a>
 </td>
+
+<?php
+    include("includes/connect.php"); 
+//$date = date("Y-m-d");
+$result ="select * from pages where date_to = '".date("Y-m-d")."'";
+$run = mysqli_query($con, $result);
+ if(mysqli_num_rows($run) > 0)
+      {
+          while($row = mysqli_fetch_assoc($result))
+      {
+           $img = "images"."/".$row["file_name"];
+  
+
+?>
+
 <td width="91%" valign="middle">
-<a href="index.php?pid=1&eid=1&nid=1&tnid=7858&date="><img src="newspaper/thumbs/1.jpg" alt="Page # 1" width="82" height="82" border="2" style="border-color: #0099CC"/></a>&nbsp;&nbsp;
-<a href=""><img src="newspaper/thumbs/2.jpg" alt="Page # 2" width="82" height="82" border="2" style="border-color: #0099CC"/></a>&nbsp;&nbsp;
-<a href=""><img src="newspaper/thumbs/3.jpg" alt="Page # 3" width="82" height="82" border="2" style="border-color: #0099CC"/></a>&nbsp;&nbsp;
-<a href=""><img src="newspaper/thumbs/4.jpg" alt="Page # 4" width="82" height="82" border="2" style="border-color: #0099CC"/></a>&nbsp;&nbsp;
-<a href=""><img src="newspaper/thumbs/5.jpg" alt="Page # 5" width="82" height="82" border="2" style="border-color: #0099CC"/></a>&nbsp;&nbsp;
-<a href=""><img src="newspaper/thumbs/6.jpg" alt="Page # 6" width="82" height="82" border="2" style="border-color: #0099CC"/></a>&nbsp;&nbsp;
-<a href=""><img src="newspaper/thumbs/7.jpg" alt="Page # 7" width="82" height="82" border="2" style="border-color: #0099CC"/></a>&nbsp;&nbsp;
-<a href=""><img src="newspaper/thumbs/8.jpg" alt="Page # 8" width="82" height="82" border="2" style="border-color: #0099CC"/></a>&nbsp;&nbsp;
+
+
+<a href="<?php echo $img; ?>"><img src="<?php echo $img; ?>" alt="Page # 1" width="82" height="82" border="2" style="border-color: #0099CC"/></a>
+&nbsp;&nbsp;
+
 </td>
+ <?php
+}
+   }
+      else
+          {
+  ?>
+            <p>There are no images uploaded to display.</p>
+                    <?php
+                        }
+                    ?>
+   
+
+
+
 <td width="4%" align="right" valign="top">
-<a href=""><img src="images1/right.jpg" border="0" title="next" /></a></td>
+<a href=""><img src="images1/right.jpg" border="0" title="next" /></a>
+</td>
 </tr>
 </table>
 </div>
