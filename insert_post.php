@@ -20,42 +20,7 @@
         </center>
   <div class="form-group">
     <label for="img">Picture 1:</label>
-    <input type="file" name="image1" class="form-control" id="img"  >
-    
-  </div>
- <div class="form-group">
-    <label for="img">Picture 2:</label>
-    <input type="file" name="image2" class="form-control" id="img"  >
-    
-  </div>
-  <div class="form-group">
-    <label for="img">Picture 3:</label>
-    <input type="file" name="image3" class="form-control" id="img"  >
-    
-  </div>
- <div class="form-group">
-    <label for="img">Picture 4:</label>
-    <input type="file" name="image4" class="form-control" id="img"  >
-    
-  </div>
- <div class="form-group">
-    <label for="img">Picture 5:</label>
-    <input type="file" name="image5" class="form-control" id="img"  >
-    
-  </div>
- <div class="form-group">
-    <label for="img">Picture 6:</label>
-    <input type="file" name="image6" class="form-control" id="img"  >
-    
-  </div>
-<div class="form-group">
-    <label for="img">Picture 7:</label>
-    <input type="file" name="image7" class="form-control" id="img"  >
-    
-  </div>
-  <div class="form-group">
-    <label for="img">Picture 8:</label>
-    <input type="file" name="image8" class="form-control" id="img"  >
+    <input type="file" name="files[]" class="form-control" id="img"  multiple>
     
   </div>
  
@@ -122,7 +87,7 @@ if(isset($_POST["btn"])){
             if($uploadThisFile){
                 $filename=basename($file_name,$ext);
                 $newFileName=$filename.$ext;                
-                move_uploaded_file($_FILES["files"]["tmp_name"][$key],"images/".$newFileName);
+                move_uploaded_file($_FILES["files"]["tmp_name"][$key],"uploads/".$newFileName);
                  
                 $query = "INSERT INTO pages(date_to, file_name) VALUES('".date("Y-m-d")."','".$newFileName."')";
 

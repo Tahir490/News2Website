@@ -140,14 +140,18 @@
 
 <?php
     include("includes/connect.php"); 
-//$date = date("Y-m-d");
-$result ="select * from pages where date_to = '".date("Y-m-d")."'";
+
+$date = date("y.m.d");
+$result ="select * from pages WHERE date_to = '$date'";
 $run = mysqli_query($con, $result);
- if(mysqli_num_rows($run) > 0)
+$f_result = mysqli_num_rows($run);
+if ($f_result > 0)
       {
-          while($row = mysqli_fetch_assoc($result))
+          while($row = mysqli_fetch_array($run))
       {
-           $img = "images"."/".$row["file_name"];
+           $date_of = $row["date_to"];
+  
+           $img = "uploads"."/".$row["file_name"];
   
 
 ?>
