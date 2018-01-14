@@ -11,15 +11,15 @@
     <title>Admin</title>
   </head>
   <body>
-  	<p><br/><br/></p>
-  	<div class="container">
-  		
-  		<form method="post" action="" enctype="multipart/form-data">
+  <p><br/></p>
+    <div class="container">
+      
+      <form method="post" action="" enctype="multipart/form-data">
         <center>
             <div><h2 class="heading">Upload Your Pictures</h2></div>
         </center>
   <div class="form-group">
-    <label for="img">Picture 1:</label>
+    <label for="img">Select all your pictures here:</label>
     <input type="file" name="files[]" class="form-control" id="img"  multiple>
     
   </div>
@@ -28,6 +28,75 @@
   <button type="submit" name="btn" class="btn btn-success">Upload</button>
 </form>
   	</div>
+
+    <center><font color="#408C40" size="8px"><?php echo @$_GET['del']; ?></font></center>
+
+   <p><br/></p>
+    <div class="container">
+      
+      <table class="table">
+  <thead class="thead-inverse">
+    <tr >
+      
+      <th>#</th>
+      <th>Date</th>
+      <th>File Name</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+                
+    <tr> 
+
+      <?php
+    include("includes/connect.php"); 
+
+$date = date("y.m.d");
+$result ="select * from pages order by id desc";
+$run = mysqli_query($con, $result);
+$f_result = mysqli_num_rows($run);
+if ($f_result > 0)
+      {
+          while($row = mysqli_fetch_array($run))
+      {
+
+            $id = $row["id"];
+
+           $date_of = $row["date_to"];
+  
+           $img = "uploads"."/".$row["file_name"];
+  
+
+?>
+
+     <td ><?php echo $id; ?></td>
+      <td><?php echo $date_of; ?></td>
+      <td width="50" rowspan=""><center>
+    <a href="<?php echo $img;?>">
+    <img src="<?php echo $img; ?>" width="100" height="100" border="0"></a></center>
+    </td>
+      <td><a href='delete.php?del=<?php echo $id; ?>' class="btn btn-danger">Delete</a></td>
+        </tr>
+ <?php
+}
+   }
+      else
+          {
+  ?>
+            <p>There are no images uploaded to display.</p>
+                    <?php
+                        }
+              ?>          
+   
+    
+     
+  
+
+  </tbody>
+</table>
+    </div>  
+
+   
 
 
 
