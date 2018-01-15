@@ -16,10 +16,10 @@
       
       <form method="post" action="" enctype="multipart/form-data">
         <center>
-            <div><h2 class="heading">Upload Your Pictures</h2></div>
+            <div><h2 class="heading">Post New News</h2></div>
         </center>
   <div class="form-group">
-    <label for="img">Select all your pictures here:</label>
+    <label for="img"><b>Select maxmimum 8 files here:</b></label>
     <input type="file" name="files[]" class="form-control" id="img"  multiple>
     
   </div>
@@ -83,7 +83,7 @@ if ($f_result > 0)
     <img src="<?php echo $img; ?>" width="100" height="100" border="0"></a></center>
     </td>
       <td align="center" style="padding-top: 1cm;"><a href='delete.php?delete=<?php echo $id; ?>' class="btn btn-danger">Delete</a></td>
-    <td align="center" style="padding-top: 1cm;"><a href='update.php?update=<?php echo $id; ?>'   class="btn btn-primary">Update</a></td>
+       <td align="center" style="padding-top: 1cm;"><a href='delete.php?delete=<?php echo $id; ?>' class="btn btn-primary">Update</a></td>
 	
 
 
@@ -106,7 +106,6 @@ if ($f_result > 0)
   </tbody>
 </table>
     </div>  
-   
 
    
 
