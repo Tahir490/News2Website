@@ -34,14 +34,20 @@
    <p><br/></p>
     <div class="container">
       
+<<<<<<< HEAD
+      <table class="table" border="10">
+  <thead class="thead-inverse" >
+    <tr >
+=======
       <table class="table">
  
     <tr class="bg-warning">
+>>>>>>> e8c21788180cbf618549bf01e7117a5c2e6f6056
       
-      <th>#</th>
-      <th>Date</th>
-      <th>File Name</th>
-      <th>Action</th>
+      <th align="center" border="">#</th>
+      <th align="center">Date</th>
+      <th align="center">File Name</th>
+      <th align="center">Action</th>
     </tr>
   
   <tbody>
@@ -69,13 +75,15 @@ if ($f_result > 0)
 
 ?>
 
-     <td ><?php echo $id; ?></td>
-      <td><?php echo $date_of; ?></td>
-      <td width="50" rowspan=""><center>
+     <td align="center" style="padding-top: 1cm;"><?php echo $id; ?></td>
+      <td align="center" style="padding-top: 1cm;"><?php echo $date_of; ?></td>
+      <td width="90" rowspan="" style="padding-top: 1cm;"><center>
     <a href="<?php echo $img;?>">
     <img src="<?php echo $img; ?>" width="100" height="100" border="0"></a></center>
     </td>
-      <td><a href='delete.php?delete=<?php echo $id; ?>' class="btn btn-danger">Delete</a></td>
+      <td align="center" style="padding-top: 1cm;"><a href='delete.php?del=<?php echo $id; ?>' class="btn btn-danger">Delete</a></td>
+		<td><a href='delete.php?delete=<?php echo $id; ?>' class="btn btn-danger">Delete</a></td>
+
         </tr>
  <?php
 }
