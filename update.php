@@ -35,29 +35,31 @@ include("includes/connect.php");
 <body>
 
 
-<div class="container">
-  <div class="row">
-    <h2 class="text-center">Update Record</h2>
-    <div class="table-responsive">          
-      <table class="table table-bordered table-hover">
-      
-      <tbody>
-        <tr>
-        <td><input id="fname" name="fname" required="required" type="text"></td>
-        <td><input id="fname" name="fname" required="required" type="text"></td>
-        <td><input id="fname" name="fname" required="required" type="text"></td>
-        
-        </tr>
-        <tr>
-        <td><input id="fname" name="fname" required="required" type="text"></td>
-        <td><input id="fname" name="fname" required="required" type="text"></td>
-        <td><input id="fname" name="fname" required="required" type="text"></td>
-       
-        </tr>
-        
-      </tbody>
-      </table>
-    </div>
+<form method="post" action="edit_mcs_morn.php?edit_mcs_morn=<?php echo $id; ?>" enctype="multipart/form-data">
+<table align="center" border="10" width="600">
+ <tr>
+  <td align="center" colspan="5" class="bg-danger"><h1>Update Your Record</h1></td>
+ </tr>
+ <tr>
+   <td align="center">Old Picture:</td>
+<td >
+  <center>
+    <a href="<?php echo $img;?>">
+    <img src="<?php echo $img; ?>" width="100" height="100" ></a>
+  </center>
+    </td>
+ </tr>
+
+ <tr>
+   <td align="center">New Picture: </td>
+   <td><input type="file" name="page8"></td>
+ </tr>
+ <tr>
+   <td align="center" colspan="5"><input type="submit" name="Update" value="Publish Now" class="btn btn-success"></td>
+ </tr>
+</table>
+
+</form>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" 
 crossorigin="anonymous"></script>
