@@ -35,7 +35,7 @@ include("includes/connect.php");
 <body>
 
 
-<form method="post" action="edit_mcs_morn.php?edit_mcs_morn=<?php echo $id; ?>" enctype="multipart/form-data">
+<form method="post" action="update.php?update_pic=<?php echo $id; ?>" enctype="multipart/form-data">
 <table align="center" border="10" width="600">
  <tr>
   <td align="center" colspan="5" class="bg-danger"><h1>Update Your Record</h1></td>
@@ -52,10 +52,10 @@ include("includes/connect.php");
 
  <tr>
    <td align="center">New Picture: </td>
-   <td><input type="file" name="page8"></td>
+   <td><input type="file" name="file"></td>
  </tr>
  <tr>
-   <td align="center" colspan="5"><input type="submit" name="Update" value="Publish Now" class="btn btn-success"></td>
+   <td align="center" colspan="5"><button type="submit" name="update" class="btn btn-success">Upload</button></td>
  </tr>
 </table>
 
@@ -68,3 +68,47 @@ crossorigin="anonymous"></script>
 
 </body>
 </html>
+
+<?php
+include("includes/connect.php");
+if(isset($_POST['update'])){
+      $edit_id = $_GET['update_pic'];
+      
+      $date = date("y.m.d");
+
+         if(isset($_FILES['file'])){
+      $errors= array();
+       function GetImageExtension($imgtype)
+ {
+  if(empty($imgtype)) return false;
+  switch($imgtype)
+  { 
+  case 'image/bmp': return '.bmp';
+  case 'image/gif': return '.gif';
+  case 'image/jpeg': return '.jpg';
+  case 'image/png': return '.png';
+  default: return false;
+    }
+  } 
+  if (!empty($_FILES["file"]["name"])) {
+    $file_name=$_FILES["file"]["name"];
+    $temp_name=$_FILES["file"]["tmp_name"];
+    $imgtype=$_FILES["file"]["type"];
+    $ext= GetImageExtension($imgtype);
+    $imagename=date("d-m-Y")."-".time().$ext;
+    $target_path = "uploads/".$imagename;
+    
+   }
+   }
+    
+      if(move_uploaded_file($temp_name, $target_path)) {
+    
+      
+    $que = "UPDATE pages set date_to = '$date', file_name='".$imagename."' where id='$edit_id'";
+      if(mysqli_query($con, $que)){
+        header('location:insert_post.php?update=Data has been Updated Successfully!!!');
+      }
+  }
+}
+
+?>

@@ -30,6 +30,7 @@
   	</div>
 
     <center><font color="#2F7032" size="8px"><?php echo @$_GET['delete']; ?></font></center>
+     <center><font color="#2F7032" size="8px"><?php echo @$_GET['update']; ?></font></center>
 
    <p><br/></p>
     <div class="container">
@@ -83,7 +84,7 @@ if ($f_result > 0)
     <img src="<?php echo $img; ?>" width="100" height="100" border="0"></a></center>
     </td>
       <td align="center" style="padding-top: 1cm;"><a href='delete.php?delete=<?php echo $id; ?>' class="btn btn-danger">Delete</a></td>
-       <td align="center" style="padding-top: 1cm;"><a href='delete.php?delete=<?php echo $id; ?>' class="btn btn-primary">Update</a></td>
+       <td align="center" style="padding-top: 1cm;"><a href='update.php?update=<?php echo $id; ?>' class="btn btn-primary">Update</a></td>
 	
 
 
