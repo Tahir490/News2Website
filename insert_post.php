@@ -29,21 +29,21 @@
 </form>
   	</div>
 
-    <center><font color="#408C40" size="8px"><?php echo @$_GET['del']; ?></font></center>
+    <center><font color="#408C40" size="8px"><?php echo @$_GET['delete']; ?></font></center>
 
    <p><br/></p>
     <div class="container">
       
       <table class="table">
-  <thead class="thead-inverse">
-    <tr >
+ 
+    <tr class="bg-warning">
       
       <th>#</th>
       <th>Date</th>
       <th>File Name</th>
       <th>Action</th>
     </tr>
-  </thead>
+  
   <tbody>
                 
     <tr> 
@@ -52,7 +52,7 @@
     include("includes/connect.php"); 
 
 $date = date("y.m.d");
-$result ="select * from pages order by id desc";
+$result ="SELECT * FROM pages order by id desc";
 $run = mysqli_query($con, $result);
 $f_result = mysqli_num_rows($run);
 if ($f_result > 0)
@@ -60,11 +60,11 @@ if ($f_result > 0)
           while($row = mysqli_fetch_array($run))
       {
 
-            $id = $row["id"];
+            $id = $row['id'];
 
-           $date_of = $row["date_to"];
+           $date_of = $row['date_to'];
   
-           $img = "uploads"."/".$row["file_name"];
+           $img = "uploads"."/".$row['file_name'];
   
 
 ?>
@@ -75,7 +75,7 @@ if ($f_result > 0)
     <a href="<?php echo $img;?>">
     <img src="<?php echo $img; ?>" width="100" height="100" border="0"></a></center>
     </td>
-      <td><a href='delete.php?del=<?php echo $id; ?>' class="btn btn-danger">Delete</a></td>
+      <td><a href='delete.php?delete=<?php echo $id; ?>' class="btn btn-danger">Delete</a></td>
         </tr>
  <?php
 }
