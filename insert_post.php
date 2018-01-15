@@ -29,25 +29,26 @@
 </form>
   	</div>
 
-    <center><font color="#408C40" size="8px"><?php echo @$_GET['delete']; ?></font></center>
+    <center><font color="#2F7032" size="8px"><?php echo @$_GET['delete']; ?></font></center>
 
    <p><br/></p>
     <div class="container">
       
-<<<<<<< HEAD
+
       <table class="table" border="10">
   <thead class="thead-inverse" >
     <tr >
-=======
+
       <table class="table">
  
     <tr class="bg-warning">
->>>>>>> e8c21788180cbf618549bf01e7117a5c2e6f6056
+
       
       <th align="center" border="">#</th>
       <th align="center">Date</th>
       <th align="center">File Name</th>
-      <th align="center">Action</th>
+      <th align="center">Delete</th>
+      <th align="center">Update</th>
     </tr>
   
   <tbody>
@@ -81,8 +82,10 @@ if ($f_result > 0)
     <a href="<?php echo $img;?>">
     <img src="<?php echo $img; ?>" width="100" height="100" border="0"></a></center>
     </td>
-      <td align="center" style="padding-top: 1cm;"><a href='delete.php?del=<?php echo $id; ?>' class="btn btn-danger">Delete</a></td>
-		<td><a href='delete.php?delete=<?php echo $id; ?>' class="btn btn-danger">Delete</a></td>
+      <td align="center" style="padding-top: 1cm;"><a href='delete.php?delete=<?php echo $id; ?>' class="btn btn-danger">Delete</a></td>
+       <td align="center" style="padding-top: 1cm;"><a href='delete.php?delete=<?php echo $id; ?>' class="btn btn-primary">Update</a></td>
+	
+
 
         </tr>
  <?php
