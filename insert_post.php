@@ -39,16 +39,16 @@
   <thead class="thead-inverse" >
     <tr >
 
-      <table class="table">
+      <table class="table" border="3">
  
     <tr class="bg-warning">
 
       
-      <th align="center" border="">#</th>
-      <th align="center">Date</th>
-      <th align="center">File Name</th>
-      <th align="center">Delete</th>
-      <th align="center">Update</th>
+      <th align="center" style="text-align:center">#</th>
+      <th align="center" style="text-align:center">Date</th>
+      <th align="center" style="text-align:center">File Name</th>
+      <th align="center" style="text-align:center">Delete</th>
+      <th align="center" style="text-align:center">Update</th>
     </tr>
   
   <tbody>
