@@ -56,7 +56,7 @@
 			  <form action="/action_page.php">
               <span> Date:</span>
                   <input type="date" name="bday">
-                  <input type="submit">
+                  <input type="submit" name="search" value="Search" style="background-color: #A81008; border-color: #A81008; color: #fff;">
               </form>
 		   </div>
 		 <!-- </form> -->
@@ -115,6 +115,7 @@
 
  <?php 
   include("includes/connect.php");
+ 
 $pid = @$_GET['pid'];
     $que  = "SELECT * FROM pages where id ='$pid'";
   $run = mysqli_query($con, $que);
@@ -137,7 +138,7 @@ $pid = @$_GET['pid'];
  <div id="maincontent">
  
   
-  <img src="<?php echo $img; ?>" width="980px" id="gallerya" name="gallerya"/>
+  <img id="mainImage" src="<?php echo $img; ?>" width="980" name="gallerya"/>
 
 </div>
 
@@ -176,6 +177,7 @@ $run = mysqli_query($con, $result);
 $f_result = mysqli_num_rows($run);
 if ($f_result > 0)
       {
+        $count =0;
           while($row = mysqli_fetch_array($run))
       {
 
@@ -192,11 +194,12 @@ if ($f_result > 0)
 <td width="91%" valign="middle">
 
 
-<a href='index.php?pid=<?php echo $id; ?>'><img src="<?php echo $img; ?>" alt="Page # 1" width="82" height="82" border="2" style="border-color: #0099CC"/></a>
+<a href='index.php?pid=<?php echo $id; ?>'><img id="imageIcon<?php echo $count; ?>" src="<?php echo $img; ?>" alt="Page # 1" width="82" height="82" border="2" style="border-color: #0099CC"/></a>
 &nbsp;&nbsp;
 
 </td>
  <?php
+ $count++;
 }
    }
       else
@@ -254,4 +257,10 @@ if ($f_result > 0)
 <a href="#"><img src="images1/icon4.jpg" border="0" class="iconimage"   title="youtube"/></a></div>
 </div>
 </body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+ $(document).ready(function(){
+  $("#mainImage").attr('src',$("#imageIcon0").attr('src'));
+ });
+</script>
 </html>

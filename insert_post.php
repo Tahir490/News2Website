@@ -30,8 +30,52 @@
 </form>
   	</div>
 
-    <center><font color="#A81008" size="8px"><?php echo @$_GET['delete']; ?></font></center>
+ <center><font color="#A81008" size="8px"><?php echo @$_GET['delete']; ?></font></center>
      <center><font color="#0851EE" size="8px"><?php echo @$_GET['update']; ?></font></center>
+
+  </br>
+  <div style="margin-left: 910px; margin-bottom: -25px;">
+  <form class="form-inline" action="insert_post.php" method="get">
+  <div class="form-group">
+      <input type="date" data-date="" data-date-format="DD MMMM YYYY" value="2015-08-09">
+  </div>
+  <button type="submit" name="sub" class="btn btn-danger" style="margin-left: 10px;">Search Here</button>
+</form>
+</div>
+
+   <?php
+  include("includes/connect.php");
+    if(isset($_GET['search'])){
+     
+       $search = $_GET['search'];
+        $date = DateTime::createFromFormat('d/m/Y','$search');
+       $que = "SELECT * FROM pages WHERE date_to = $date->format('Y-m-d')";
+       $run = mysqli_query($con, $que);
+       while($row=mysqli_fetch_array($run)){
+      $id = $row['id'];
+      $date_of = $row['date_to'];
+      $img = $row['file_name'];
+ 
+    ?>
+    <div class="container">
+    <div class="well">
+    <div class="responsive-table">
+  <table class="table table-bordered">
+  <tr class="info">
+      <td><?php echo @$id; ?></td>
+      <td><?php echo @$date_of; ?></td>
+      <td><a href="<?php echo $img;?>">
+    <img src="<?php echo $img; ?>" width="100" height="100" border="0"></a>
+  </td>
+     
+   
+      
+    </tr>
+    <tr>
+      <td align="center" colspan="12"><a href="insert_post.php">OK</a></td>
+    </tr>
+  </table><br><br>
+    <?php }} ?>
 
    <p><br/></p>
     <div class="container">
