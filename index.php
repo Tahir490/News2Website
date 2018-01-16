@@ -56,7 +56,7 @@
 			  <form action="/action_page.php">
               <span> Date:</span>
                   <input type="date" name="bday">
-                  <input type="submit" value="Search">
+                  <input type="submit">
               </form>
 		   </div>
 		 <!-- </form> -->
