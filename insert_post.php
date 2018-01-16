@@ -1,51 +1,3 @@
-<?php
-function pagination($total_num_results,$posts_per_page,$cur_page) {
-  $no = $total_num_results / $posts_per_page;
-  $no = ceil($no);
-  $prev="";
-  $pages_html="";
-
-  $start_page=$cur_page-2;
-  $end_page=$cur_page+2;
-  $start_diff=$cur_page-1;
-  $end_diff=$no-$cur_page;
-  if($end_diff < 2) {
-    $start_page=$cur_page+$end_diff;
-    $start_page=$start_page-4;
-  }
-  while($start_page < 1) { $start_page=$start_page+1; }
-  if($start_diff < 2) {
-    $end_page=$cur_page-$start_diff;
-    $end_page=$end_page+4;
-  }
-  while($end_page > $no) { $end_page=$end_page-1; }
-
-  //creating div with `id`=pagination
-  $pages_html .= "<div id='pagination' >";
-
-  //displaying current page out of the total number of pages available
-  $pages_html .= "<label class='disptext' >Page ".$cur_page." of ".$no."</label>";
-  //appending first page button
-  if($start_diff > 2) { $pages_html .= "<a href='?page=1' > << First </a>"; }
-  //appending previous page button
-  if($cur_page > 1) { $prev=$cur_page-1; $pages_html .= "<a href='?page=".$prev."' > < Prev </a>"; }
-
-  //appending the page number buttons
-  for($i=$start_page; $i<=$end_page; $i++) { $pages_html .= "<a href='?page=".$i."' id='page".$i."' > ".$i." </a>"; }
-
-  //appending the next page button
-  if($cur_page < $no) { $next=$cur_page+1; $pages_html .= "<a href='?page=".$next."' > Next > </a>"; }
-
-  //Appending the last page button
-  if($end_diff > 2) { $pages_html .= "<a href='?page=".$no."' > Last >> </a>"; }
-  //jquery script to highlight the current page button
-  $pages_html .= "<script type='text/javascript'>var d = document.getElementById('page".$cur_page."');
-  d.className += ' selectedpage';</script>";
-  $pages_html .= "</div><!--pagination-->";
-
-  return $pages_html; //returns html content.
-}
-?>
 
 <!doctype html>
 <html lang="en">
@@ -78,16 +30,14 @@ function pagination($total_num_results,$posts_per_page,$cur_page) {
 </form>
   	</div>
 
-    <center><font color="#2F7032" size="8px"><?php echo @$_GET['delete']; ?></font></center>
-     <center><font color="#2F7032" size="8px"><?php echo @$_GET['update']; ?></font></center>
+    <center><font color="#A81008" size="8px"><?php echo @$_GET['delete']; ?></font></center>
+     <center><font color="#0851EE" size="8px"><?php echo @$_GET['update']; ?></font></center>
 
    <p><br/></p>
     <div class="container">
       
 
-      <table class="table" border="10">
-  <thead class="thead-inverse" >
-    <tr >
+    
 
       <table class="table" border="3">
  
@@ -128,9 +78,11 @@ if ($f_result > 0)
 
      <td align="center" style="padding-top: 1cm;"><?php echo $id; ?></td>
       <td align="center" style="padding-top: 1cm;"><?php echo $date_of; ?></td>
-      <td width="90" rowspan="" style="padding-top: 1cm;"><center>
+      <td width="90" rowspan="" >
+        <center>
     <a href="<?php echo $img;?>">
-    <img src="<?php echo $img; ?>" width="100" height="100" border="0"></a></center>
+    <img src="<?php echo $img; ?>" width="100" height="100" border="0"></a>
+  </center>
     </td>
       <td align="center" style="padding-top: 1cm;"><a href='delete.php?delete=<?php echo $id; ?>' class="btn btn-danger">Delete</a></td>
        <td align="center" style="padding-top: 1cm;"><a href='update.php?update=<?php echo $id; ?>' class="btn btn-primary">Update</a></td>
@@ -244,19 +196,3 @@ if(isset($_POST["btn"])){
     }
 
   ?>  
-
-  <?php
-include("includes/connect.php");
-  //$total_num_results=23;
-       //or get the count dynamically as shown below.
-       $query=mysqli_query($con, "select * from pages"); //query to show results from.
-       $total_num_results = mysqli_num_rows($query); //Total count of the fetched results.
-       //////////////////////////////////
-  $posts_per_page="8"; //how many results do you need to show on a single page.
-  $cur_page="1"; //current page. by default it is set to 1.
-  if(isset($_GET['page'])) {
-   $cur_page=$_GET['page']; 
-   } //if variable `page` is set in url parameters, then change the current page.
-  $html=pagination($total_num_results,$posts_per_page,$cur_page); //calling pagination function.
-  echo $html; //printing the result.
-?>  

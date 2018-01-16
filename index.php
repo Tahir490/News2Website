@@ -112,9 +112,13 @@
       </script>
 
 </div>
+
  <div id="maincontent">
+  
   <img src="newspaper/2.jpg" width="980px" id="gallerya" name="gallerya"/>
+
 </div>
+
  <div id="header">
 <div id="ads">
 <table align="center">
