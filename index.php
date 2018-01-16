@@ -49,16 +49,17 @@
     <table width="96%" border="0" align="right" cellpadding="2" cellspacing="2">
 	  <tr>
 	    <td>
-		  <form name="form" id="form">
+		  <!-- <form name="form" id="form"> -->
 		   <div align="right">
-		    <span class="style3">Dated:</span>
-              <select name="jumpMenu" id="jumpMenu" onChange="MM_jumpMenu('parent',this,0)">
-			  <option value="">1/01/2018</option>
-			  <option value="">2/01/2018</option>
-			  <option value="">3/01/2018</option>
-			  </select>
+		    
+              
+			  <form action="/action_page.php">
+              <span> Date:</span>
+                  <input type="date" name="bday">
+                  <input type="submit" value="Search">
+              </form>
 		   </div>
-		  </form>
+		 <!-- </form> -->
 		</td>
 		<td width="7%"><img src="images1/shumara.jpg" /></td>
         <td width="11%">
