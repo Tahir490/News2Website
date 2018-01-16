@@ -14,25 +14,48 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
+      <file leaf-file-name="insert_post.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/insert_post.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="120" column="14" lean-forward="false" selection-start-line="120" selection-start-column="14" selection-end-line="120" selection-end-column="14" />
-              <folding />
+            <state relative-caret-position="385">
+              <caret line="58" column="45" lean-forward="true" selection-start-line="49" selection-start-column="3" selection-end-line="58" selection-end-column="45" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1516137951968" expanded="true" signature="1575:1612" ph="SELECT * FRO... pages" />
+                <marker date="1516137951968" expanded="true" signature="1575:1620" ph="SELECT * FRO... pages" />
+                <marker date="1516137951968" expanded="true" signature="1964:2343" ph="..." />
+                <marker date="1516137951968" expanded="true" signature="1964:3163" ph="..." />
+                <marker date="1516137951968" expanded="true" signature="1971:2198" ph="..." />
+                <marker date="1516137951968" expanded="true" signature="2057:2171" ph="..." />
+                <marker date="1516137951968" expanded="true" signature="2086:2163" ph="..." />
+                <marker date="1516137951968" expanded="true" signature="2411:3163" ph="..." />
+                <marker date="1516137951968" expanded="true" signature="2464:3163" ph="..." />
+                <marker date="1516137951968" expanded="true" signature="2494:2819" ph="..." />
+                <marker date="1516137951968" expanded="true" signature="2832:3163" ph="..." />
+                <marker date="1516137951968" expanded="true" signature="2858:3163" ph="..." />
+                <marker date="1516137951968" expanded="true" signature="2946:2982" ph="SELECT * FRO... pages" />
+                <marker date="1516137951968" expanded="true" signature="3458:3608" ph="..." />
+                <marker date="1516137951968" expanded="true" signature="3476:3598" ph="..." />
+                <marker date="1516137951968" expanded="true" signature="3510:3586" ph="..." />
+                <marker date="1516137951968" expanded="true" signature="6433:6517" ph="INSERT INTO pages... " />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="insert_post.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/insert_post.php">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="39" column="89" lean-forward="false" selection-start-line="39" selection-start-column="89" selection-end-line="39" selection-end-column="89" />
+            <state relative-caret-position="-2684">
+              <caret line="57" column="49" lean-forward="false" selection-start-line="57" selection-start-column="49" selection-end-line="57" selection-end-column="49" />
               <folding>
-                <marker date="1516130468910" expanded="true" signature="1745:1803" ph="SELECT * FRO... pages" />
-                <marker date="1516130468910" expanded="true" signature="3073:3109" ph="SELECT * FRO... pages" />
-                <marker date="1516130468910" expanded="true" signature="6696:6780" ph="INSERT INTO pages... " />
+                <element signature="n#style#0;n#img#0;n#a#0;n#td#2;n#tr#0;n#table#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#6816#6822#0#HTML" expanded="true" />
+                <element signature="e#6822#6828#0#HTML" expanded="true" />
+                <marker date="1516139573139" expanded="true" signature="4416:4452" ph="SELECT * FRO... pages" />
+                <marker date="1516139573139" expanded="true" signature="5560:5603" ph="select * fro... pages" />
+                <marker date="1516139573139" expanded="true" signature="6274:6319" ph="SELECT * FRO... pages" />
               </folding>
             </state>
           </provider>
@@ -47,6 +70,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/insert_post.php" />
+        <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
   </component>
@@ -122,12 +146,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1516129311602</updated>
-      <workItem from="1516129318606" duration="1107000" />
+      <workItem from="1516129318606" duration="9302000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1107000" />
+    <option name="totallyTimeSpent" value="9302000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -160,26 +184,51 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/insert_post.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="120" column="14" lean-forward="false" selection-start-line="120" selection-start-column="14" selection-end-line="120" selection-end-column="14" />
-          <folding />
+        <state relative-caret-position="385">
+          <caret line="58" column="45" lean-forward="true" selection-start-line="49" selection-start-column="3" selection-end-line="58" selection-end-column="45" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1516137951968" expanded="true" signature="1575:1612" ph="SELECT * FRO... pages" />
+            <marker date="1516137951968" expanded="true" signature="1575:1620" ph="SELECT * FRO... pages" />
+            <marker date="1516137951968" expanded="true" signature="1964:2343" ph="..." />
+            <marker date="1516137951968" expanded="true" signature="1964:3163" ph="..." />
+            <marker date="1516137951968" expanded="true" signature="1971:2198" ph="..." />
+            <marker date="1516137951968" expanded="true" signature="2057:2171" ph="..." />
+            <marker date="1516137951968" expanded="true" signature="2086:2163" ph="..." />
+            <marker date="1516137951968" expanded="true" signature="2411:3163" ph="..." />
+            <marker date="1516137951968" expanded="true" signature="2464:3163" ph="..." />
+            <marker date="1516137951968" expanded="true" signature="2494:2819" ph="..." />
+            <marker date="1516137951968" expanded="true" signature="2832:3163" ph="..." />
+            <marker date="1516137951968" expanded="true" signature="2858:3163" ph="..." />
+            <marker date="1516137951968" expanded="true" signature="2946:2982" ph="SELECT * FRO... pages" />
+            <marker date="1516137951968" expanded="true" signature="3458:3608" ph="..." />
+            <marker date="1516137951968" expanded="true" signature="3476:3598" ph="..." />
+            <marker date="1516137951968" expanded="true" signature="3510:3586" ph="..." />
+            <marker date="1516137951968" expanded="true" signature="6433:6517" ph="INSERT INTO pages... " />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/insert_post.php">
+    <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="39" column="89" lean-forward="false" selection-start-line="39" selection-start-column="89" selection-end-line="39" selection-end-column="89" />
+        <state relative-caret-position="-2684">
+          <caret line="57" column="49" lean-forward="false" selection-start-line="57" selection-start-column="49" selection-end-line="57" selection-end-column="49" />
           <folding>
-            <marker date="1516130468910" expanded="true" signature="1745:1803" ph="SELECT * FRO... pages" />
-            <marker date="1516130468910" expanded="true" signature="3073:3109" ph="SELECT * FRO... pages" />
-            <marker date="1516130468910" expanded="true" signature="6696:6780" ph="INSERT INTO pages... " />
+            <element signature="n#style#0;n#img#0;n#a#0;n#td#2;n#tr#0;n#table#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#6816#6822#0#HTML" expanded="true" />
+            <element signature="e#6822#6828#0#HTML" expanded="true" />
+            <marker date="1516139573139" expanded="true" signature="4416:4452" ph="SELECT * FRO... pages" />
+            <marker date="1516139573139" expanded="true" signature="5560:5603" ph="select * fro... pages" />
+            <marker date="1516139573139" expanded="true" signature="6274:6319" ph="SELECT * FRO... pages" />
           </folding>
         </state>
       </provider>

@@ -53,10 +53,10 @@
 		   <div align="right">
 		    
               
-			  <form action="/action_page.php">
+			  <form action="search.php" method="get">
               <span> Date:</span>
-                  <input type="date" name="bday">
-                  <input type="submit" name="search" value="Search" style="background-color: #A81008; border-color: #A81008; color: #fff;">
+                  <input type="date" name="search"/>
+                  <input type="submit" name="search" value="Search" style="background-color: #A81008; border-color: #A81008; color: #fff;"/>
               </form>
 		   </div>
 		 <!-- </form> -->
@@ -206,9 +206,7 @@ if ($f_result > 0)
           {
   ?>
             <p>There are no images uploaded to display.</p>
-                    <?php
-                        }
-                    ?>
+<?php }?>
    
 
 
