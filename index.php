@@ -113,9 +113,31 @@
 
 </div>
 
- <div id="maincontent">
+ <?php 
+  include("includes/connect.php");
+$pid = @$_GET['pid'];
+    $que  = "SELECT * FROM pages where id ='$pid'";
+  $run = mysqli_query($con, $que);
+ $f_result = mysqli_num_rows($run);
+  if ($f_result > 0)
+      {
+          while($row = mysqli_fetch_array($run))
+      {
+          $id = $row['id'];
+
+           $date_of = $row['date_to'];
   
-  <img src="newspaper/2.jpg" width="980px" id="gallerya" name="gallerya"/>
+           $img = "uploads"."/".$row['file_name'];
+  
+    }
+  }
+
+?>
+
+ <div id="maincontent">
+ 
+  
+  <img src="<?php echo $img; ?>" width="980px" id="gallerya" name="gallerya"/>
 
 </div>
 
@@ -143,6 +165,8 @@
 <img src="images1/left.jpg" border="0" title="prev" /></a>
 </td>
 
+
+
 <?php
     include("includes/connect.php"); 
 
@@ -154,6 +178,8 @@ if ($f_result > 0)
       {
           while($row = mysqli_fetch_array($run))
       {
+
+            $id = $row['id'];
            $date_of = $row["date_to"];
   
            $img = "uploads"."/".$row["file_name"];
@@ -161,10 +187,12 @@ if ($f_result > 0)
 
 ?>
 
+
+
 <td width="91%" valign="middle">
 
 
-<a href="<?php echo $img; ?>"><img src="<?php echo $img; ?>" alt="Page # 1" width="82" height="82" border="2" style="border-color: #0099CC"/></a>
+<a href='index.php?pid=<?php echo $id; ?>'><img src="<?php echo $img; ?>" alt="Page # 1" width="82" height="82" border="2" style="border-color: #0099CC"/></a>
 &nbsp;&nbsp;
 
 </td>
