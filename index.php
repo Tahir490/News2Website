@@ -1,11 +1,12 @@
-<html>
-<head>
+<!DOCTYPE html>
+<html> 
 <title>Daily Himalaya</title>
-<link rel="stylesheet" type="text/css" href="style1.css">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="style1.css"/>
 <link rel="stylesheet" type="text/css" href="css/chromestyle.css" />
-<script type="text/javascript" src="">
-
-</script>
+<script type="text/javascript" src="js/chrome.js"></script>
+<script type="text/javascript" src="js/jsq.js"></script> 
 </head>
 <body>
 <div id="head">
@@ -82,18 +83,18 @@
    </div>
    <!-- pages -->
 <div id="dropmenu3" class="dropmenudiv"  style="text-align:left;">
-    <a href="index.php?pid=1&eid=1&nid=1&tnid=7858&date=" ><strong>1-Front</strong></a>
-      <a href="index.php?pid=2&eid=1&nid=1&tnid=7858&date=" ><strong>2-News</strong></a>
-      <a href="index.php?pid=3&eid=1&nid=1&tnid=7858&date=" ><strong>3-News</strong></a>
-      <a href="index.php?pid=4&eid=1&nid=1&tnid=7858&date=" ><strong>4-Editorial</strong></a>
-      <a href="index.php?pid=5&eid=1&nid=1&tnid=7858&date=" ><strong>5-Sports</strong></a>
-      <a href="index.php?pid=6&eid=1&nid=1&tnid=7858&date=" ><strong>6-Classified</strong></a>
-      <a href="index.php?pid=7&eid=1&nid=1&tnid=7858&date=" ><strong>7- Baqia</strong></a>
-      <a href="index.php?pid=8&eid=1&nid=1&tnid=7858&date=" ><strong>8-Back Page</strong></a>
-      <a href="index.php?pid=9&eid=1&nid=1&tnid=7858&date=" ><strong>Sup1</strong></a>
-      <a href="index.php?pid=10&eid=1&nid=1&tnid=7858&date=" ><strong>Sup2</strong></a>
-      <a href="index.php?pid=11&eid=1&nid=1&tnid=7858&date=" ><strong>Sup3</strong></a>
-      <a href="index.php?pid=12&eid=1&nid=1&tnid=7858&date=" ><strong>Sup4</strong></a>
+    <a href="#" ><strong>1-Front</strong></a>
+      <a href="#" ><strong>2-News</strong></a>
+      <a href="#" ><strong>3-News</strong></a>
+      <a href="#" ><strong>4-Editorial</strong></a>
+      <a href="#" ><strong>5-Sports</strong></a>
+      <a href="#" ><strong>6-Classified</strong></a>
+      <a href="#" ><strong>7- Baqia</strong></a>
+      <a href="#" ><strong>8-Back Page</strong></a>
+      <a href="#" ><strong>Sup1</strong></a>
+      <a href="#" ><strong>Sup2</strong></a>
+      <a href="#" ><strong>Sup3</strong></a>
+      <a href="#" ><strong>Sup4</strong></a>
   </div>
   <!-- editions -->
 <div id="dropmenu2" class="dropmenudiv" style="text-align:left;">
@@ -111,6 +112,7 @@
       cssdropdown.startchrome("chromemenu")
       </script>
 
+</div>
 </div>
 
  <?php 
