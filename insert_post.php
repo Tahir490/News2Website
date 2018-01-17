@@ -1,3 +1,29 @@
+<?php
+session_start();
+if(!$_SESSION['name']){
+    header('location:login.php?error=You are not an administrator!!');
+}
+?>
+<?php
+include("includes/connect.php");
+if(isset($_POST['admin']))
+{
+    $admin_name=$_POST['name'];
+    $admin_pass=$_POST['password'];
+    $query=mysqli_query($con, "INSERT INTO login(name, password) VALUES('$admin_name,'$admin_pass')");
+
+   $row = mysqli_num_rows($query);
+   if ($row==1)
+
+    {
+        echo "<script>alert('New Admin Added')</script>";
+    }
+
+    else{
+        echo"<script>alert('There is an error')</script>";
+    }
+}
+?>
 
 <!doctype html>
 <html lang="en">
@@ -12,7 +38,51 @@
     <title>Admin</title>
   </head>
   <body>
-  <p><br/></p>
+<div class="container">
+    <div class="dropdown">
+        <button class="btn btn-success btn-lg  dropdown-toggle" type="button" data-toggle="dropdown" style="margin-top: 5px;">
+            ADMIN PANEL
+            <span class="caret" style="margin-right: 100px;"></span>
+        </button>
+        <ul class="dropdown-menu" >
+            <li ><a href="index.php"  style="color: #000000; margin-left: 2px;">Main Page</a></li>
+            <li><a href="#add_admin" data-toggle="modal" style="color: #000000; margin-left: 2px;">Add New Admin</a></li>
+            <li><a href="logout.php" style="color: #000000; margin-left: 2px;">Logout</a></li>
+        </ul>
+    </div>
+
+
+</div>
+
+  </br></br>
+
+<div class="modal fade" id="add_admin" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <form method="post" action="" >
+                    <center>
+                        <div><h2 class="heading">Adding New Admin</h2></div>
+                    </center>
+
+                    <div class="form-group">
+                        <label for="cnic">Name:</label>
+                        <input type="text" name="name" class="form-control"  placeholder="Enter Name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="add">Password:</label>
+                        <input type="password" name="password" class="form-control"  placeholder="Enter Password">
+                    </div>
+
+
+                    <button type="submit" name="admin" class="btn btn-success">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
     <div class="container">
       
       <form method="post" action="" enctype="multipart/form-data">

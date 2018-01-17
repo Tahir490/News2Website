@@ -1,5 +1,12 @@
+<<<<<<< HEAD
+
+
+<html>
+<head>
+=======
 <!DOCTYPE html>
 <html> 
+
 <title>Daily Himalaya</title>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -54,10 +61,10 @@
 		   <div align="right">
 		    
               
-			  <form action="search.php" method="get">
+			  <form action="index.php" method="get">
               <span> Date:</span>
                   <input type="date" name="search"/>
-                  <input type="submit" name="search" value="Search" style="background-color: #A81008; border-color: #A81008; color: #fff;"/>
+                  <button type="submit" name="search" >Search</button>
               </form>
 		   </div>
 		 <!-- </form> -->
@@ -171,7 +178,7 @@ $pid = @$_GET['pid'];
 
 
 <?php
-    include("includes/connect.php"); 
+    include("includes/connect.php");
 
 $date = date("y.m.d");
 $result ="select * from pages WHERE date_to = '$date'";
@@ -185,9 +192,9 @@ if ($f_result > 0)
 
             $id = $row['id'];
            $date_of = $row["date_to"];
-  
+
            $img = "uploads"."/".$row["file_name"];
-  
+
 
 ?>
 
