@@ -38,9 +38,10 @@ if(isset($_POST['admin']))
     <title>Admin</title>
   </head>
   <body>
+  <nav class="navbar fixed-top navbar-dark bg-success">
 <div class="container">
     <div class="dropdown">
-        <button class="btn btn-success btn-lg  dropdown-toggle" type="button" data-toggle="dropdown" style="margin-top: 5px;">
+        <button class="btn btn-info btn-lg  dropdown-toggle" type="button" data-toggle="dropdown" style="margin-top: 5px;">
             ADMIN PANEL
             <span class="caret" style="margin-right: 100px;"></span>
         </button>
@@ -51,10 +52,11 @@ if(isset($_POST['admin']))
         </ul>
     </div>
 
-
+ <h2 class="text-white"> Admin Panel of Daily Sada-e-Himalaya Gilgit-Baltistan </h2>
 </div>
-
-  </br></br>
+  
+</nav>
+  </br></br></br></br></br>
 
 <div class="modal fade" id="add_admin" role="dialog">
     <div class="modal-dialog">
@@ -87,7 +89,7 @@ if(isset($_POST['admin']))
       
       <form method="post" action="" enctype="multipart/form-data">
         <center>
-            <div><h2 class="heading">Post New News</h2></div>
+            <div><h2 class="heading bg-secondary text-white">Post New News</h2></div>
         </center>
   <div class="form-group">
     <label for="img"><b>Select maxmimum 8 files here:</b></label>
@@ -240,7 +242,9 @@ if ($f_result > 0)
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
 
-
+<footer class="bg-success text-white">
+ <h2 class="text-center"> Admin Panel of Daily Himalaya Gilgit-Baltistan </h2>
+</footer>
   </body>
 </html>
 
