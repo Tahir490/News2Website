@@ -30,8 +30,57 @@
 </form>
   	</div>
 
-    <center><font color="#A81008" size="8px"><?php echo @$_GET['delete']; ?></font></center>
+ <center><font color="#A81008" size="8px"><?php echo @$_GET['delete']; ?></font></center>
      <center><font color="#0851EE" size="8px"><?php echo @$_GET['update']; ?></font></center>
+
+  </br>
+  <div style="margin-left: 910px; margin-bottom: 10px;">
+  <form  action="insert_post.php" method="get">
+
+      <input type="date" name="search" />
+
+  <button type="submit" name="btn" class="btn btn-danger" style="margin-left: 10px;">Search Here</button>
+</form>
+</div>
+
+
+
+   <?php
+  include("includes/connect.php");
+    if(isset($_GET['btn'])){
+
+       $search = $_GET['search'];
+
+       $que = "SELECT * FROM pages WHERE date_to = '$search'";
+       $run = mysqli_query($con, $que);
+       while($row=mysqli_fetch_array($run)){
+      $id = $row['id'];
+      $date_of = $row['date_to'];
+      $img = "uploads"."/".$row['file_name'];
+
+    ?>
+  <div class="container">
+      <div class="well">
+          <div class="responsive-table">
+              <table class="table table-bordered">
+
+
+  <tr >
+      <td><?php echo @$id; ?></td>
+      <td><?php echo @$date_of; ?></td>
+      <td><a href="<?php echo $img;?>">
+    <img src="<?php echo @$img; ?>" width="100" height="100" border="0"></a>
+  </td>
+     
+   
+      
+    </tr>
+      <?php } ?>
+    <tr>
+      <td align="center" colspan="12"><a href="insert_post.php"class="btn btn-danger">OK</a></td>
+    </tr>
+  </table><br><br>
+    <?php } ?>
 
    <p><br/></p>
     <div class="container">
@@ -46,7 +95,7 @@
       
       <th align="center" style="text-align:center">#</th>
       <th align="center" style="text-align:center">Date</th>
-      <th align="center" style="text-align:center">File Name</th>
+      <th align="center" style="text-align:center">Image</th>
       <th align="center" style="text-align:center">Delete</th>
       <th align="center" style="text-align:center">Update</th>
     </tr>
@@ -121,8 +170,7 @@ if ($f_result > 0)
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="js/bootstrap.js"></script>
+
   </body>
 </html>
 
