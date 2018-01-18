@@ -257,11 +257,31 @@ if ($f_result > 0)
 <a href="#"><img src="images1/icon3.jpg" border="0" class="iconimage"  title="facebook"/> </a>
 <a href="#"><img src="images1/icon4.jpg" border="0" class="iconimage"   title="youtube"/></a></div>
 </div>
+<script>
+    $(document).ready(function(){
+
+        var tech = getUrlParameter('pid');
+        if(!tech) {
+            $("#mainImage").attr('src', $("#imageIcon0").attr('src'));
+        }
+    });
+
+    var getUrlParameter = function getUrlParameter(sParam) {
+        var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+            sURLVariables = sPageURL.split('&'),
+            sParameterName,
+            i;
+
+        for (i = 0; i < sURLVariables.length; i++) {
+            sParameterName = sURLVariables[i].split('=');
+
+            if (sParameterName[0] === sParam) {
+                return sParameterName[1] === undefined ? true : sParameterName[1];
+            }
+        }
+    };
+</script>
 </body>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script>
- $(document).ready(function(){
-  $("#mainImage").attr('src',$("#imageIcon0").attr('src'));
- });
-</script>
+
 </html>
