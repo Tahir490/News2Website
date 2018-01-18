@@ -8,15 +8,19 @@ if(isset($_POST['login']))
     $admin_name=$_SESSION['name']=$_POST['name'];
     $admin_pass=$_POST['password'];
     $query="SELECT * FROM login WHERE name='$admin_name' AND password='$admin_pass'";
-
-    if(mysqli_query($con, $query))
+	$result = mysqli_query($con, $query);
+	$row = mysqli_num_rows($result);
+	
+    if($row==1)
 
     {
-        header('Location: insert_post.php');
+		header('Location: insert_post.php');
+        
     }
 
     else{
         echo"<script>alert('User name or Password is incorrect')</script>";
+		
     }
 }
 ?>

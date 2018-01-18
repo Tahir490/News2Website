@@ -10,18 +10,12 @@ if(isset($_POST['admin']))
 {
     $admin_name=$_POST['name'];
     $admin_pass=$_POST['password'];
-    $query=mysqli_query($con, "INSERT INTO login(name, password) VALUES('$admin_name,'$admin_pass')");
+    $query="INSERT INTO login(name, password) 
+	VALUES('$admin_name,'$admin_pass')";
+	$res = mysqli_query($con, $query);
 
-   $row = mysqli_num_rows($query);
-   if ($row==1)
-
-    {
-        echo "<script>alert('New Admin Added')</script>";
-    }
-
-    else{
-        echo"<script>alert('There is an error')</script>";
-    }
+   $row = mysqli_num_rows($res);
+   echo $row;
 }
 ?>
 
