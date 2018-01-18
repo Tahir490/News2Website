@@ -71,7 +71,7 @@ if(isset($_POST['admin']))
 
 
                     <button type="submit" name="admin" class="btn btn-success">Add</button>
-					<a href="insert_post.php"<button  name="admin" class="btn btn-success">Back to Admin Panel</button></a>
+					<a href="insert_post.php"<button  name="admin" class="btn btn-warning">Back to Admin Panel</button></a>
                 </form>
     </div>
           </br>
