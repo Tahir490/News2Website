@@ -1,24 +1,30 @@
-
 <?php
 session_start();
-if(!$_SESSION['name']){
-    header('location:login.php?error=You are not an administrator!!');
-}
 ?>
 <?php
 include("includes/connect.php");
-if(isset($_POST['admin']))
+if(isset($_POST['login']))
 {
-    $admin_name=$_POST['name'];
+    $admin_name=$_SESSION['name']=$_POST['name'];
     $admin_pass=$_POST['password'];
-    $query="INSERT INTO login(name, password) 
-  VALUES('$admin_name,'$admin_pass')";
-  $res = mysqli_query($con, $query);
+    $query="SELECT * FROM admin_author WHERE a_name='$admin_name' AND a_password='$admin_pass'";
+	$result = mysqli_query($con, $query);
+	$row = mysqli_num_rows($result);
 
-   $row = mysqli_num_rows($res);
-   
+    if($row > 0)
+
+    {
+		header('Location: addAdmin.php');
+
+    }
+
+    else{
+        echo"<script>alert('You are not an authorized admin')</script>";
+
+    }
 }
 ?>
+
 
 
 <!doctype html>
@@ -92,17 +98,20 @@ if(isset($_POST['admin']))
     <div class="modal-content">
     <div class="modal-header">
     
-    <form method="post" action="addAdmin.php" >
+    <form method="post" action="insert_post.php" >
     <center>
-      <div><h2 class="heading">MCS MORNING</h2></div>
+      <div><h2 class="heading">Admin Autherization</h2></div>
     </center>
   <div class="form-group">
-    <label for="name">Student Name:</label>
-    <input type="text" class="form-control" name="name" id="name" placeholder="Example:Tahir Jutt" required>
+    <label for="name">Name</label>
+    <input type="text" class="form-control" name="name" required>
   </div>
   <div class="form-group">
-    <label for="rollno">Roll No:</label>
-    <input type="text" name="roll" class="form-control" id="rollno" placeholder="Example:473" required>
+    <label for="rollno">Password</label>
+    <input type="password" name="pass" class="form-control" required>
+
+      <button type="submit" name="login" class="btn btn-success">Login</button>
+    </form>
   </div>
     </div>
       </div>

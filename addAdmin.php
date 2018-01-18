@@ -1,7 +1,7 @@
 <?php
 session_start();
-if(!$_SESSION['name']){
-    header('location:login.php?error=You are not an administrator!!');
+if(!$_SESSION['a_name']){
+    header('location:insert_post.php?error=You are not an authorized admin!!');
 }
 ?>
 <?php
@@ -100,7 +100,7 @@ if(isset($_POST['admin']))
       <?php
     include("includes/connect.php"); 
 
-$date = date("y.m.d");
+
 $result ="SELECT * FROM login";
 $run = mysqli_query($con, $result);
 $f_result = mysqli_num_rows($run);
