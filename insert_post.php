@@ -43,12 +43,9 @@ if(isset($_POST['admin']))
         </button>
         <ul class="dropdown-menu" >
 
-            <li ><a href="index.php"  style="color: #000000; margin-left: 2px;">Main Page</a></li>
-            <li><a href="addAdmin.php"  style="color: #000000; margin-left: 2px;">Add New Admin</a></li>
-            <li><a href="logout.php" style="color: #000000; margin-left: 2px;">Logout</a></li>
 
             <li class="fa fa-home" style="font-size:20px"><a href="index.php"  style="color: #000000; margin-left: 2px;">Main Page</a></li>
-            <li class="fa fa-plus-circle" style="font-size:20px"><a href="#add_admin" data-toggle="modal" style="color: #000000; margin-left: 2px;">New Admin</a></li>
+            <li class="fa fa-plus-circle" style="font-size:20px"><a href="addAdmin.php" data-toggle="modal" style="color: #000000; margin-left: 2px;">New Admin</a></li>
             <li class="fa fa-unlock" style="font-size:20px"><a href="logout.php" style="color: #000000; margin-left: 2px;">Logout</a></li>
 
         </ul>
