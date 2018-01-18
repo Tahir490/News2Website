@@ -15,7 +15,7 @@ if(isset($_POST['admin']))
 	$res = mysqli_query($con, $query);
 
    $row = mysqli_num_rows($res);
-   echo $row;
+   
 }
 ?>
 
@@ -28,21 +28,21 @@ if(isset($_POST['admin']))
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Admin</title>
   </head>
   <body>
   <nav class="navbar fixed-top navbar-dark bg-success">
 <div class="container">
     <div class="dropdown">
-        <button class="btn btn-info btn-lg  dropdown-toggle" type="button" data-toggle="dropdown" style="margin-top: 5px;">
-            ADMIN PANEL
-            <span class="caret" style="margin-right: 100px;"></span>
+        <button class="btn btn-info btn-md  dropdown-toggle" type="button" data-toggle="dropdown" style="margin-top: 5px;">
+            ADMIN 
+            <i class="fa fa-user-circle-o " style="font-size:35px;color:black"></i>
         </button>
         <ul class="dropdown-menu" >
-            <li ><a href="index.php"  style="color: #000000; margin-left: 2px;">Main Page</a></li>
-            <li><a href="#add_admin" data-toggle="modal" style="color: #000000; margin-left: 2px;">Add New Admin</a></li>
-            <li><a href="logout.php" style="color: #000000; margin-left: 2px;">Logout</a></li>
+            <li class="fa fa-home" style="font-size:20px"><a href="index.php"  style="color: #000000; margin-left: 2px;">Main Page</a></li>
+            <li class="fa fa-plus-circle" style="font-size:20px"><a href="#add_admin" data-toggle="modal" style="color: #000000; margin-left: 2px;">New Admin</a></li>
+            <li class="fa fa-unlock" style="font-size:20px"><a href="logout.php" style="color: #000000; margin-left: 2px;">Logout</a></li>
         </ul>
     </div>
 
