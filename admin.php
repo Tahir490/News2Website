@@ -7,15 +7,15 @@ if(isset($_POST['login']))
 {
     $admin_name=$_SESSION['name']=$_POST['name'];
     $admin_pass=$_POST['password'];
-    $query="SELECT * FROM login WHERE name='$admin_name' AND password='$admin_pass'";
-	$result = mysqli_query($con, $query);
- if (mysqli_num_rows($result) > 0){
+    $query="SELECT * FROM  admin_author WHERE a_name='$admin_name' AND a_password='$admin_pass'";
+    $result = mysqli_query($con, $query);
+    if (mysqli_num_rows($result) > 0){
 
-        header('Location: insert_post.php');
+        header('Location: addAdmin.php');
 
     }
     else{
-        echo"<script>alert('User name or Password is incorrect')</script>";
+        echo"<script>alert('Sorry, You are not Authorize to do this Job')</script>";
     }
 }
 ?>
@@ -92,7 +92,7 @@ if(isset($_POST['login']))
 </head>
 <body>
 
-<h2 align="center">Login</h2>
+<h2 align="center">Admin</h2>
 
 <form action="" method="post">
     <div class="imgcontainer">

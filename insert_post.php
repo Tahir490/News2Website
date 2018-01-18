@@ -1,33 +1,8 @@
 <?php
 session_start();
 ?>
-<?php
-include("includes/connect.php");
-if(isset($_POST['login']))
-{
-    $admin_name=$_SESSION['name']=$_POST['name'];
-    $admin_pass=$_POST['password'];
-    $query="SELECT * FROM admin_author WHERE a_name='$admin_name' AND a_password='$admin_pass'";
-	$result = mysqli_query($con, $query);
-	$row = mysqli_num_rows($result);
 
-    if($row > 0)
-
-    {
-		header('Location: addAdmin.php');
-
-    }
-
-    else{
-        echo"<script>alert('You are not an authorized admin')</script>";
-
-    }
-}
-?>
-
-
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -51,7 +26,6 @@ if(isset($_POST['login']))
 
 
             <li class="fa fa-home" style="font-size:20px"><a href="index.php"  style="color: #000000; margin-left: 2px;">Main Page</a></li>
-            <li class="fa fa-plus-circle" style="font-size:20px"><a href="#login" data-toggle="modal"  style="color: #000000; margin-left: 2px;">New Admin</a></li>
             <li class="fa fa-unlock" style="font-size:20px"><a href="logout.php" style="color: #000000; margin-left: 2px;">Logout</a></li>
 
         </ul>
@@ -93,30 +67,7 @@ if(isset($_POST['login']))
 </form>
 </div>
 
-<div class="modal fade" id="login" role="dialog">
-    <div class="modal-dialog">
-    <div class="modal-content">
-    <div class="modal-header">
-    
-    <form method="post" action="insert_post.php" >
-    <center>
-      <div><h2 class="heading">Admin Autherization</h2></div>
-    </center>
-  <div class="form-group">
-    <label for="name">Name</label>
-    <input type="text" class="form-control" name="name" required>
-  </div>
-  <div class="form-group">
-    <label for="rollno">Password</label>
-    <input type="password" name="pass" class="form-control" required>
 
-      <button type="submit" name="login" class="btn btn-success">Login</button>
-    </form>
-  </div>
-    </div>
-      </div>
-        </div>
-          </div>
 
 
 

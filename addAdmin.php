@@ -1,7 +1,7 @@
 <?php
 session_start();
-if(!$_SESSION['a_name']){
-    header('location:insert_post.php?error=You are not an authorized admin!!');
+if(!$_SESSION['name']){
+    header('location:login.php?error=Sorry, You are not Authorize to do this Job!!');
 }
 ?>
 <?php
@@ -71,7 +71,8 @@ if(isset($_POST['admin']))
 
 
                     <button type="submit" name="admin" class="btn btn-success">Add</button>
-					<a href="insert_post.php"<button  name="admin" class="btn btn-warning">Back to Admin Panel</button></a>
+					<a href="insert_post.php"<button   class="btn btn-warning">Back to Admin Panel</button></a>
+                    <a href="logout.php"<button  class="btn btn-info">Logout</button></a>
                 </form>
     </div>
           </br>
