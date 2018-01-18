@@ -1,10 +1,9 @@
 <?php
 session_start();
 if(!$_SESSION['name']){
-    header('location:login.php?error=You are not an administrator!!');
+    header('location:login.php?error=Sorry, You are not Authorize to do this Job!!');
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -29,6 +28,7 @@ if(!$_SESSION['name']){
 
 
             <li class="fa fa-home" style="font-size:20px"><a href="index.php"  style="color: #000000; margin-left: 2px;">Main Page</a></li>
+
             <li class="fa fa-unlock" style="font-size:20px"><a href="logout.php" style="color: #000000; margin-left: 2px;">Logout</a></li>
 
         </ul>
@@ -100,9 +100,9 @@ if(!$_SESSION['name']){
       <td><a href="<?php echo $img;?>">
     <img src="<?php echo @$img; ?>" width="100" height="100" border="0"></a>
   </td>
-     
-   
-      
+
+
+
     </tr>
       <?php } ?>
     <tr>
