@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 if(!$_SESSION['name']){
@@ -11,13 +12,14 @@ if(isset($_POST['admin']))
     $admin_name=$_POST['name'];
     $admin_pass=$_POST['password'];
     $query="INSERT INTO login(name, password) 
-	VALUES('$admin_name,'$admin_pass')";
-	$res = mysqli_query($con, $query);
+  VALUES('$admin_name,'$admin_pass')";
+  $res = mysqli_query($con, $query);
 
    $row = mysqli_num_rows($res);
    
 }
 ?>
+
 
 <!doctype html>
 <html lang="en">
@@ -40,9 +42,15 @@ if(isset($_POST['admin']))
             <i class="fa fa-user-circle-o " style="font-size:35px;color:black"></i>
         </button>
         <ul class="dropdown-menu" >
+
+            <li ><a href="index.php"  style="color: #000000; margin-left: 2px;">Main Page</a></li>
+            <li><a href="addAdmin.php"  style="color: #000000; margin-left: 2px;">Add New Admin</a></li>
+            <li><a href="logout.php" style="color: #000000; margin-left: 2px;">Logout</a></li>
+
             <li class="fa fa-home" style="font-size:20px"><a href="index.php"  style="color: #000000; margin-left: 2px;">Main Page</a></li>
             <li class="fa fa-plus-circle" style="font-size:20px"><a href="#add_admin" data-toggle="modal" style="color: #000000; margin-left: 2px;">New Admin</a></li>
             <li class="fa fa-unlock" style="font-size:20px"><a href="logout.php" style="color: #000000; margin-left: 2px;">Logout</a></li>
+
         </ul>
     </div>
 
@@ -52,33 +60,6 @@ if(isset($_POST['admin']))
 </nav>
   </br></br></br></br></br>
 
-<div class="modal fade" id="add_admin" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-
-                <form method="post" action="" >
-                    <center>
-                        <div><h2 class="heading">Adding New Admin</h2></div>
-                    </center>
-
-                    <div class="form-group">
-                        <label for="cnic">Name:</label>
-                        <input type="text" name="name" class="form-control"  placeholder="Enter Name">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="add">Password:</label>
-                        <input type="password" name="password" class="form-control"  placeholder="Enter Password">
-                    </div>
-
-
-                    <button type="submit" name="admin" class="btn btn-success">Add</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
     <div class="container">
       
       <form method="post" action="" enctype="multipart/form-data">
@@ -94,7 +75,7 @@ if(isset($_POST['admin']))
   
   <button type="submit" name="btn" class="btn btn-success">Upload</button>
 </form>
-  	</div>
+    </div>
 
  <center><font color="#A81008" size="8px"><?php echo @$_GET['delete']; ?></font></center>
      <center><font color="#0851EE" size="8px"><?php echo @$_GET['update']; ?></font></center>
@@ -201,7 +182,7 @@ if ($f_result > 0)
     </td>
       <td align="center" style="padding-top: 1cm;"><a href='delete.php?delete=<?php echo $id; ?>' class="btn btn-danger">Delete</a></td>
        <td align="center" style="padding-top: 1cm;"><a href='update.php?update=<?php echo $id; ?>' class="btn btn-primary">Update</a></td>
-	
+  
 
 
         </tr>

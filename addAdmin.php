@@ -12,7 +12,7 @@ if(isset($_POST['admin']))
     $admin_pass=$_POST['password'];
     $query="INSERT INTO login (name, password) VALUES('$admin_name','$admin_pass')";
 
-	if(mysqli_query($con, $query)){
+  if(mysqli_query($con, $query)){
 
      echo "<script>alert('New admin added')</script>";  
    }
