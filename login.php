@@ -89,10 +89,24 @@ if(isset($_POST['login']))
             }
         }
     </style>
+	
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Admin</title>
 </head>
 <body>
+<nav class="navbar fixed-top navbar-dark bg-info">
+<div class="container">
+ 
+ <h2 class="text-white" > Admin Panel of Daily Sada-e-Himalaya Gilgit-Baltistan </h2>
+</div>
+  
+</nav>
+  </br></br></br></br></br>
+<body>
 
-<h2 align="center">Login</h2>
+<h2 align="center">Admin Login</h2>
 
 <form action="" method="post">
     <div class="imgcontainer">
@@ -113,6 +127,8 @@ if(isset($_POST['login']))
 
 
 </form>
-
+<footer class="bg-info text-white">
+ <h4 class="text-center"> Copyright Daily Sada-e-Himalaya </h4>
+</footer>
 </body>
 </html>
