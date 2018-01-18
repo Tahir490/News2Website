@@ -11,6 +11,6 @@ $del = $_GET['delete'];
 //$query="delete from pages where id='$del_pic'";
 $query =  "DELETE FROM login WHERE id = '$del'";
 if(mysqli_query($con, $query)){
-    header('location:insert_post.php?delete=Data has been Deleted Successfully!!!');
+    header('location:addAdmin.php?delete=Data has been Deleted Successfully!!!');
 }
 ?>
