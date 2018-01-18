@@ -75,6 +75,7 @@ if(isset($_POST['admin']))
                 </form>
             </div>
           </br>
+  <center><font color="#A81008" size="8px"><?php echo @$_GET['delete']; ?></font></center>
 
               <div class="container">
       <div class="well">
@@ -117,7 +118,7 @@ if ($f_result > 0)
      <td align="center" style="padding-top: 1cm;"><?php echo $id; ?></td>
       <td align="center" style="padding-top: 1cm;"><?php echo $name; ?></td>
       <td align="center" style="padding-top: 1cm;"><?php echo $pass; ?></td>
-      <td align="center" style="padding-top: 1cm;"><a href='delete.php?delete=<?php echo $id; ?>' class="btn btn-danger">Delete</a></td>
+      <td align="center" style="padding-top: 1cm;"><a href='del_admin.php?delete=<?php echo $id; ?>' class="btn btn-danger">Delete</a></td>
 
          </tr>
  <?php
