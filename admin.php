@@ -5,8 +5,8 @@ session_start();
 include("includes/connect.php");
 if(isset($_POST['login']))
 {
-    $admin_name=$_SESSION['name']=$_POST['name'];
-    $admin_pass=$_POST['password'];
+    $admin_name=$_SESSION['aname']=$_POST['name'];
+    $admin_pass=$_POST['apassword'];
     $query="SELECT * FROM  admin_author WHERE a_name='$admin_name' AND a_password='$admin_pass'";
     $result = mysqli_query($con, $query);
     if (mysqli_num_rows($result) > 0){
@@ -101,10 +101,10 @@ if(isset($_POST['login']))
 
     <div class="container">
         <label><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="name" required>
+        <input type="text" placeholder="Enter Username" name="aname" required>
 
         <label><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="password" required>
+        <input type="password" placeholder="Enter Password" name="apassword" required>
 
         <button type="submit" name="login">Login</button>
 
