@@ -11,7 +11,7 @@ if(isset($_POST['login']))
 	$result = mysqli_query($con, $query);
 	$row = mysqli_num_rows($result);
 	
-    if($row==1)
+    if($row > 0)
 
     {
 		header('Location: insert_post.php');

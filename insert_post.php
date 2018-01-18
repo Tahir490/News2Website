@@ -45,7 +45,7 @@ if(isset($_POST['admin']))
 
 
             <li class="fa fa-home" style="font-size:20px"><a href="index.php"  style="color: #000000; margin-left: 2px;">Main Page</a></li>
-            <li class="fa fa-plus-circle" style="font-size:20px"><a href="addAdmin.php" style="color: #000000; margin-left: 2px;">New Admin</a></li>
+            <li class="fa fa-plus-circle" style="font-size:20px"><a href="#login" data-toggle="modal"  style="color: #000000; margin-left: 2px;">New Admin</a></li>
             <li class="fa fa-unlock" style="font-size:20px"><a href="logout.php" style="color: #000000; margin-left: 2px;">Logout</a></li>
 
         </ul>
@@ -86,6 +86,28 @@ if(isset($_POST['admin']))
   <button type="submit" name="btn" class="btn btn-danger" style="margin-left: 10px;">Search Here</button>
 </form>
 </div>
+
+<div class="modal fade" id="login" role="dialog">
+    <div class="modal-dialog">
+    <div class="modal-content">
+    <div class="modal-header">
+    
+    <form method="post" action="addAdmin.php" >
+    <center>
+      <div><h2 class="heading">MCS MORNING</h2></div>
+    </center>
+  <div class="form-group">
+    <label for="name">Student Name:</label>
+    <input type="text" class="form-control" name="name" id="name" placeholder="Example:Tahir Jutt" required>
+  </div>
+  <div class="form-group">
+    <label for="rollno">Roll No:</label>
+    <input type="text" name="roll" class="form-control" id="rollno" placeholder="Example:473" required>
+  </div>
+    </div>
+      </div>
+        </div>
+          </div>
 
 
 
