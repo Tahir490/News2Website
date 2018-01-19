@@ -3,10 +3,6 @@ session_start();
 
 if(!$_SESSION['aname']){
     header('location:admin.php?error=Sorry, You are not Authorize to do this Job!!');
-<<<<<<< HEAD
-
-=======
->>>>>>> 2572b7006603fd8def0261876a8518c0b63b4d69
 }
 
 ?>
