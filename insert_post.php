@@ -149,8 +149,8 @@ if ($f_result > 0)
 
            $date_of = $row['date_to'];
   
-           $img = "uploads"."/".$row['file_name'];
-  
+           $img = "uploads/thumbs"."/".$row['file_name'];
+
 
 ?>
 
@@ -234,7 +234,7 @@ if(isset($_POST["btn"])){
              
             $file_name=$_FILES["files"]["name"][$key];
             $file_tmp=$_FILES["files"]["tmp_name"][$key];
-             
+             print_r($file_name);
             $ext=pathinfo($file_name,PATHINFO_EXTENSION);
  
             if(!in_array(strtolower($ext),$extension))
@@ -250,8 +250,8 @@ if(isset($_POST["btn"])){
              
             if($uploadThisFile){
                 $filename=basename($file_name,$ext);
-                $newFileName=$filename.$ext;                
-                move_uploaded_file($_FILES["files"]["tmp_name"][$key],"uploads/".$newFileName);
+                $newFileName=$filename.$ext;
+                move_uploaded_file($_FILES["files"]["tmp_name"][$key],"uploads/thumbs/".$newFileName);
                  
                 $query = "INSERT INTO pages(date_to, file_name) VALUES('".date("Y-m-d")."','".$newFileName."')";
 

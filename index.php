@@ -116,7 +116,8 @@
 </div>
 </div>
 
- <?php 
+ <?php
+ date_default_timezone_set("Asia/Karachi");
   include("includes/connect.php");
  
 $pid = @$_GET['pid'];
@@ -131,7 +132,7 @@ $pid = @$_GET['pid'];
 
            $date_of = $row['date_to'];
   
-           $img = "uploads"."/".$row['file_name'];
+           $img = "uploads/thumbs"."/".$row['file_name'];
   
     }
   }
@@ -172,6 +173,7 @@ $pid = @$_GET['pid'];
 
 
 <?php
+date_default_timezone_set("Asia/Karachi");
     include("includes/connect.php");
 if(!isset($_GET['btn'])) {
     $date = date("y.m.d");
@@ -184,38 +186,48 @@ if(!isset($_GET['btn'])) {
 
             $id = $row['id'];
             $date_of = $row["date_to"];
-
-            $img = "uploads" . "/" . $row["file_name"];
-
-
+            $img = "uploads/thumbs" . "/" . $row["file_name"];
             ?>
-
-
             <td width="91%" valign="middle">
-
-
                 <a href='index.php?pid=<?php echo $id; ?>'><img id="imageIcon<?php echo $count; ?>"
                                                                 src="<?php echo $img; ?>" alt="Page # 1" width="82"
                                                                 height="82" border="2"
                                                                 style="border-color: #0099CC"/></a>
                 &nbsp;&nbsp;
-
             </td>
             <?php
             $count++;
         }
     }
-}
+    elseif($f_result == 0) {
+        $result = "SELECT * FROM pages WHERE date_to BETWEEN DATE_ADD(CURDATE(), INTERVAL -1 day) AND CURDATE()";
+        $run = mysqli_query($con, $result);
 
-            else {
-            ?>
-    <p>Error</p>
-
-    <?php }?>
+       if (mysqli_num_rows($run) > 0){
+           $count = 0;
+           while ($row = mysqli_fetch_array($run)) {
+               $id = $row['id'];
+               $date_of = $row["date_to"];
+               $img = "uploads/thumbs" . "/" . $row["file_name"];
+               ?>
+               <td width="91%" valign="middle">
+                   <a href='index.php?pid=<?php echo $id; ?>'><img id="imageIcon<?php echo $count; ?>"
+                                                                   src="<?php echo $img; ?>" alt="Page # 1" width="82"
+                                                                   height="82" border="2"
+                                                                   style="border-color: #0099CC"/></a>
+                   &nbsp;&nbsp;
+               </td>
+               <?php
+               $count++;
+           }
+       }
+    }
+ }
+?>
     <?php
+    date_default_timezone_set("Asia/Karachi");
     include("includes/connect.php");
-
-       if(isset($_GET['btn'])) {
+if(isset($_GET['btn'])) {
 
           $search = $_GET['search'];
           $que = "SELECT * FROM pages WHERE date_to = '$search'";
@@ -226,7 +238,7 @@ if(!isset($_GET['btn'])) {
               while ($row = mysqli_fetch_array($run1)) {
                   $id = $row['id'];
                   $date_of = $row['date_to'];
-                  $img = "uploads" . "/" . $row['file_name'];
+                  $img = "uploads/thumbs" . "/" . $row['file_name'];
 
 
                   ?>
@@ -244,12 +256,13 @@ if(!isset($_GET['btn'])) {
                   $count++;
               }
           }
-      }
-   else {
-    ?>
-       <p>Error</p>
 
-       <?php }?>
+      }
+
+    ?>
+
+
+
    
 
 
