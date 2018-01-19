@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if(!$_SESSION['name']){
+if(!$_SESSION['aname']){
     header('location:admin.php?error=Sorry, You are not Authorize to do this Job!!');
 }
 
