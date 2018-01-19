@@ -55,10 +55,10 @@
 		   <div align="right">
 		    
               
-			  <form action="index.php" method="get">
+			  <form action="" method="get">
               <span> Date:</span>
                   <input type="date" name="search"/>
-                  <button type="submit" name="search" >Search</button>
+                  <button type="submit" name="btn" >Search</button>
               </form>
 		   </div>
 		 <!-- </form> -->
@@ -173,43 +173,83 @@ $pid = @$_GET['pid'];
 
 <?php
     include("includes/connect.php");
-
-$date = date("y.m.d");
-$result ="select * from pages WHERE date_to = '$date'";
-$run = mysqli_query($con, $result);
-$f_result = mysqli_num_rows($run);
-if ($f_result > 0)
-      {
-        $count =0;
-          while($row = mysqli_fetch_array($run))
-      {
+if(!isset($_GET['btn'])) {
+    $date = date("y.m.d");
+    $result = "select * from pages WHERE date_to = '$date'";
+    $run = mysqli_query($con, $result);
+    $f_result = mysqli_num_rows($run);
+    if ($f_result > 0) {
+        $count = 0;
+        while ($row = mysqli_fetch_array($run)) {
 
             $id = $row['id'];
-           $date_of = $row["date_to"];
+            $date_of = $row["date_to"];
 
-           $img = "uploads"."/".$row["file_name"];
-
-
-?>
+            $img = "uploads" . "/" . $row["file_name"];
 
 
+            ?>
 
-<td width="91%" valign="middle">
+
+            <td width="91%" valign="middle">
 
 
-<a href='index.php?pid=<?php echo $id; ?>'><img id="imageIcon<?php echo $count; ?>" src="<?php echo $img; ?>" alt="Page # 1" width="82" height="82" border="2" style="border-color: #0099CC"/></a>
-&nbsp;&nbsp;
+                <a href='index.php?pid=<?php echo $id; ?>'><img id="imageIcon<?php echo $count; ?>"
+                                                                src="<?php echo $img; ?>" alt="Page # 1" width="82"
+                                                                height="82" border="2"
+                                                                style="border-color: #0099CC"/></a>
+                &nbsp;&nbsp;
 
-</td>
- <?php
- $count++;
+            </td>
+            <?php
+            $count++;
+        }
+    }
 }
-   }
-      else
-          {
-  ?>
-            <p>There are no images uploaded to display.</p>
-<?php }?>
+
+            else {
+            ?>
+    <p>Error</p>
+
+    <?php }?>
+    <?php
+    include("includes/connect.php");
+
+       if(isset($_GET['btn'])) {
+
+          $search = $_GET['search'];
+          $que = "SELECT * FROM pages WHERE date_to = '$search'";
+          $run1 = mysqli_query($con, $que);
+          $f_result1 = mysqli_num_rows($run1);
+          if ($f_result1 > 0) {
+              $count = 0;
+              while ($row = mysqli_fetch_array($run1)) {
+                  $id = $row['id'];
+                  $date_of = $row['date_to'];
+                  $img = "uploads" . "/" . $row['file_name'];
+
+
+                  ?>
+                  <td width="91%" valign="middle">
+
+
+                      <a href='index.php?pid=<?php echo $id; ?>'><img id="imageIcon<?php echo $count; ?>"
+                                                                      src="<?php echo $img; ?>" alt="Page # 1"
+                                                                      width="82" height="82" border="2"
+                                                                      style="border-color: #0099CC"/></a>
+                      &nbsp;&nbsp;
+
+                  </td>
+                  <?php
+                  $count++;
+              }
+          }
+      }
+   else {
+    ?>
+       <p>Error</p>
+
+       <?php }?>
    
 
 
