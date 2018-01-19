@@ -3,11 +3,8 @@ session_start();
 
 if(!$_SESSION['name']){
     header('location:admin.php?error=Sorry, You are not Authorize to do this Job!!');
-
-if(!$_SESSION['aname']){
-    header('location:login.php?error=Sorry, You are not Authorize to do this Job!!');
-
 }
+
 ?>
 <?php
 include("includes/connect.php");
@@ -171,6 +168,3 @@ if ($f_result > 0)
 </footer>
   </body>
 </html>
-
-
-
