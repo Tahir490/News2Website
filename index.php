@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html> 
 
-<title>Daily Himalaya</title>
+<title>Daily Sada-e-Himalaya</title>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="style1.css"/>
@@ -84,7 +84,7 @@
    </div>
    <!-- pages -->
 <div id="dropmenu3" class="dropmenudiv"  style="text-align:left;">
-    <a href="#" ><strong>1-Front</strong></a>
+      <a href="#" ><strong>1-Front</strong></a>
       <a href="#" ><strong>2-News</strong></a>
       <a href="#" ><strong>3-News</strong></a>
       <a href="#" ><strong>4-Editorial</strong></a>
@@ -275,7 +275,7 @@ if(isset($_GET['btn'])) {
 </div>
 <div id="footer">
 <div class="copyrights">
-  <div align="center"><span class="style31">Daily Himalaya</span></div>
+  <div align="center"><span class="style31">Daily Sada-e-Himalaya</span></div>
 </div>
 <div id="footernav">
   
@@ -305,10 +305,10 @@ if(isset($_GET['btn'])) {
   </div>
 </div>  
 <div class="icons">
-<a href="#"><img src="images1/icon1.jpg" border="0" class="iconimage" title="share"/></a> 
-<a href="#"><img src="images1/icon2.jpg" border="0" class="iconimage"  title="twitter"/></a> 
-<a href="#"><img src="images1/icon3.jpg" border="0" class="iconimage"  title="facebook"/> </a>
-<a href="#"><img src="images1/icon4.jpg" border="0" class="iconimage"   title="youtube"/></a></div>
+<!--<a href="#"><img src="images1/icon1.jpg" border="0" class="iconimage" title="share"/></a> -->
+<a href="#"><img src="images1/twt.jpg" border="0" class="iconimage"  title="twitter"/></a> 
+<a href="#"><img src="images1/fb.jpg" border="0" class="iconimage"  title="facebook"/> </a>
+<a href="#"><img src="images1/utb.jpg" border="0" class="iconimage"   title="youtube"/></a></div>
 </div>
 <script>
     $(document).ready(function(){

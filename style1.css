@@ -29,7 +29,7 @@ float:right; background: url(images1/latest.jpg) no-repeat; width:79px; height:2
 min-height:500px; height:auto; margin-top:10px; margin-bottom:10px;
 }
 #thumbs {
- height:110px; background:#556B2F; border-bottom:5px solid #556B2F; border-top:5px solid #ffffff;
+ height:110px; background:#556B2F; border-bottom:5px solid #556B2F; border-top:5px solid #556B2F;
 }
 #footer {
 height:80px; background:#006400; 
