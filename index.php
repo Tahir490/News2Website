@@ -18,13 +18,13 @@
   <table align="center">
     <tr>
 	   <td>
-	     <a href="https://www.facebook.com/TGGBPK/" target="_blank"><img src="images1/tggb.jpg" alt="image" width="317" height="90"  border="0" style="padding-bottom:200px;" /></a>
+	     <a href="" target="_blank"><img src="images1/tggb.jpg" alt="image" width="317" height="90"  border="0" style="padding-bottom:200px;" /></a>
 	   </td>
 	   <td>
 	     <a href="" target="_blank"><img src="images1/tggb.jpg" alt="image" width="317" height="90"  border="0" style="padding-bottom:200px;" /></a>
 	   </td>
 	   <td>
-	      <a href="" target="_blank"><img src="images1/tggb.jpg" alt="image" width="317" height="90" border="0" style="padding-bottom:200px;" /></a>
+	      <a href="https://www.facebook.com/TGGBPK/" target="_blank"><img src="images1/tggb.jpg" alt="image" width="317" height="90" border="0" style="padding-bottom:200px;" /></a>
 	   </td>
 	</tr>
   </table>
