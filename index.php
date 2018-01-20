@@ -151,11 +151,11 @@ $pid = @$_GET['pid'];
 <table align="center">
 <tr>
 <td>
-<a href="#" target="_blank"><img src="images1/footer 1.gif" width="317" height="60" border="0"/></a></td>
+<a href="#" target="_blank"><img src="images1/ttgb1.jpg" width="317" height="60" border="0"/></a></td>
 <td>
-<a href="#" target="_blank"><img src="images1/2.gif" width="317" height="60" border="0"/></a></td>
+<a href="#" target="_blank"><img src="images1/ttgb2.jpg" width="317" height="60" border="0"/></a></td>
 <td>
-<a href="#" target="_blank"><img src="images1/3.gif" width="317" height="60" border="0" /></a></td>
+<a href="#" target="_blank"><img src="images1/ttgb1.jpg" width="317" height="60" border="0" /></a></td>
 </tr>
 </table>
 </div>
