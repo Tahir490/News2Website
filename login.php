@@ -1,7 +1,11 @@
+<?php
+session_start();
 
+?>
 <?php
 include("includes/connect.php");
 if(isset($_POST['login'])) {
+
     $admin_name = mysqli_real_escape_string($con, $_POST['name']);
     $admin_pass = mysqli_real_escape_string($con, $_POST['password']);
 
