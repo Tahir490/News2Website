@@ -11,7 +11,7 @@
 </head>
 <body>
 <div id="head">
-<img src="images1/logo.jpg" />
+<img src="images1/logo1.jpg" alt="Logo area" style="width:980px;height:180px">
 </div>
 <div id="header">
  <div id="ads">
@@ -285,9 +285,9 @@ if(isset($_GET['btn'])) {
           <td height="33">
             <div align="right">
 			    <a href="index.php"><strong>Home</strong></a>  
-                <a href="#"><strong>About Us</strong></a>  
+                <a href="#"><strong>About Us</strong></a>
+                <a href="#"><strong>Contact Us</strong></a>				
                 <a href="#"><strong>Developer</strong></a>  
-                <a href="#"><strong>Contact Us</strong></a>
 			 </div>
 		 </td>
         </tr>
@@ -295,7 +295,7 @@ if(isset($_GET['btn'])) {
              <td valign="bottom">
 			   <div align="left" class="style5">
                  <div align="right">
-			       Copyrights &copy;2010 www.dailyHimalya.com, All rights reserved. 
+			       Copyrights &copy;2018 www.Dailysadaehimalya.com, All rights reserved. 
 			     </div>
               </div>
 		    </td>
