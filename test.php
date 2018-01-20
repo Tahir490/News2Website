@@ -1,19 +1,11 @@
 <?php
-include("includes/connect.php");
+$hashed_password = crypt('12345'); // let the salt be automatically generated
 
-$que = "SELECT * FROM pages ORDER BY id DESC LIMIT 1";
-$run1 = mysqli_query($con, $que);
-$f_result1 = mysqli_num_rows($run1);
-if ($f_result1 > 0) {
-    $count = 0;
-    while ($row = mysqli_fetch_array($run1)) {
-        $id = $row['id'];
-        $date_of = $row['date_to'];
-        $img = "uploads" . "/" . $row['file_name'];
-        echo $id;
-        echo $date_of;
-        echo $img;
-    }
+/* You should pass the entire results of crypt() as the salt for comparing a
+   password, to avoid problems when different hashing algorithms are used. (As
+   it says above, standard DES-based password hashing uses a 2-character salt,
+   but MD5-based hashing uses 12.) */
+if (hash_equals($hashed_password, crypt('12345'))) {
+    echo "Password verified!";
 }
-
 ?>

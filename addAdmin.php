@@ -10,9 +10,10 @@ if(!$_SESSION['aname']){
 include("includes/connect.php");
 if(isset($_POST['admin']))
 {
-    $admin_name=$_POST['name'];
-    $admin_pass=$_POST['password'];
-    $query="INSERT INTO login (name, password) VALUES('$admin_name','$admin_pass')";
+    $admin_name=mysqli_real_escape_string($con, $_POST['name']);
+    $admin_pass=mysqli_real_escape_string($con,$_POST['password']);
+    $hash = password_hash( $admin_pass, PASSWORD_DEFAULT);
+    $query="INSERT INTO login (name, password) VALUES('$admin_name','$hash')";
 
   if(mysqli_query($con, $query)){
 

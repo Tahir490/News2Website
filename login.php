@@ -1,21 +1,23 @@
-<?php
-session_start();
-?>
+
 <?php
 include("includes/connect.php");
-if(isset($_POST['login']))
-{
-    $admin_name=$_SESSION['name']=$_POST['name'];
-    $admin_pass=$_POST['password'];
-    $query="SELECT * FROM login WHERE name='$admin_name' AND password='$admin_pass'";
-	$result = mysqli_query($con, $query);
- if (mysqli_num_rows($result) > 0) {
+if(isset($_POST['login'])) {
+    $admin_name = mysqli_real_escape_string($con, $_POST['name']);
+    $admin_pass = mysqli_real_escape_string($con, $_POST['password']);
 
-     header('Location: insert_post.php');
- }
+    $query = "SELECT * FROM login WHERE name='$admin_name'";
+    $result = mysqli_query($con, $query);
+    if (mysqli_num_rows($result) > 0) {
 
-    else{
-        echo"<script>alert('User name or Password is incorrect')</script>";
+        while ($row = mysqli_fetch_array($result)) {
+            if (password_verify($admin_pass, $row['password'])) {
+                $_SESSION['name'] = $admin_name;
+                header('location: insert_post.php');
+            }
+            else {
+                echo "<script>alert('User name or Password is incorrect')</script>";
+            }
+        }
     }
 }
 ?>
