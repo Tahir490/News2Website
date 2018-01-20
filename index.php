@@ -18,13 +18,13 @@
   <table align="center">
     <tr>
 	   <td>
-	     <a href="" target="_blank"><img src="" alt="image" width="317" height="60"  border="0" /></a>
+	     <a href="https://www.facebook.com/TGGBPK/" target="_blank"><img src="images1/tggb.jpg" alt="image" width="317" height="90"  border="0" style="padding-bottom:200px;" /></a>
 	   </td>
 	   <td>
-	     <a href="" target="_blank"><img src="" alt="image" width="317" height="60"  border="0" /></a>
+	     <a href="" target="_blank"><img src="images1/tggb.jpg" alt="image" width="317" height="90"  border="0" style="padding-bottom:200px;" /></a>
 	   </td>
 	   <td>
-	      <a href="" target="_blank"><img src="" alt="image" width="317" height="60" border="0" /></a>
+	      <a href="" target="_blank"><img src="images1/tggb.jpg" alt="image" width="317" height="90" border="0" style="padding-bottom:200px;" /></a>
 	   </td>
 	</tr>
   </table>
@@ -151,11 +151,11 @@ $pid = @$_GET['pid'];
 <table align="center">
 <tr>
 <td>
-<a href="#" target="_blank"><img src="banners/footer 1.gif" width="317" height="60" border="0"/></a></td>
+<a href="#" target="_blank"><img src="images1/footer 1.gif" width="317" height="60" border="0"/></a></td>
 <td>
-<a href="#" target="_blank"><img src="banners/2.gif" width="317" height="60" border="0"/></a></td>
+<a href="#" target="_blank"><img src="images1/2.gif" width="317" height="60" border="0"/></a></td>
 <td>
-<a href="#" target="_blank"><img src="banners/3.gif" width="317" height="60" border="0" /></a></td>
+<a href="#" target="_blank"><img src="images1/3.gif" width="317" height="60" border="0" /></a></td>
 </tr>
 </table>
 </div>
