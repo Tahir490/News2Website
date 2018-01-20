@@ -19,7 +19,7 @@ include("includes/connect.php");
 
            $date_of = $row['date_to'];
   
-           $img = "uploads"."/".$row['file_name'];
+           $img = "uploads/thumbs"."/".$row['file_name'];
   
     }
   }
@@ -103,7 +103,7 @@ if(isset($_POST['update'])){
     $imgtype=$_FILES["file"]["type"];
     $ext= GetImageExtension($imgtype);
     $imagename=date("d-m-Y")."-".time().$ext;
-    $target_path = "uploads/".$imagename;
+    $target_path = "uploads/thumbs/".$imagename;
     
    }
    }
