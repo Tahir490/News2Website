@@ -203,7 +203,7 @@ if(!isset($_GET['btn'])) {
         }
     }
     elseif($f_result == 0) {
-        $result = "SELECT * FROM pages WHERE date_to BETWEEN DATE_ADD(CURDATE(), INTERVAL -1 day) AND CURDATE()";
+        $result = "SELECT * FROM pages WHERE date_to BETWEEN DATE_ADD(CURDATE(), INTERVAL -2 day) AND CURDATE()";
         $run = mysqli_query($con, $result);
 
        if (mysqli_num_rows($run) > 0){
