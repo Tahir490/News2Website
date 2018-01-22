@@ -18,13 +18,13 @@
   <table align="center">
     <tr>
 	   <td>
-	     <a href="" target="_blank"><img src="images1/tggb.jpg" alt="image" width="317" height="90"  border="0"  /></a>
+	     <a href="" target="_blank"><img src="images1/ads1.png" alt="image" width="317" height="90"  border="0"  /></a>
 	   </td>
 	   <td>
 	     <a href="" target="_blank"><img src="images1/tggb.jpg" alt="image" width="317" height="90"  border="0" /></a>
 	   </td>
 	   <td>
-	      <a href="https://www.facebook.com/TGGBPK/" target="_blank"><img src="images1/tggb.jpg" alt="image" width="317" height="90" border="0" /></a>
+	      <a href="https://www.facebook.com/TGGBPK/" target="_blank"><img src="images1/ttgb2.jpg" alt="image" width="317" height="90" border="0" /></a>
 	   </td>
 	</tr>
   </table>
@@ -63,21 +63,23 @@
 		   </div>
 		 <!-- </form> -->
 		</td>
-		<td width="7%"><img src="images1/shumara.jpg" /></td>
+		<td width="7%"><img src="images1/daly.jpg" /></td>
         <td width="11%">
-		  <a href="#"><img src="images1/video-gallery.jpg" width="56" height="25" border="0" /></a>
+		  <a href="#"><img src="images1/vedio.jpg" width="56" height="25" border="0" /></a>
 		</td>
         <td width="11%">
-		  <a href="#" rel="dropmenu3"><img src="images1/pages.jpg" border=0/></a>
+		  <a href="#" rel="dropmenu3"><img src="images1/page.jpg" border=0/></a>
 		</td>
         <td width="10%">
-		  <a href="#" rel="dropmenu2"><img src="images1/editions.jpg" border=0/></a>
+		  <a href="#" rel="dropmenu2"><img src="images1/adision.jpg" border=0/></a>
 		</td>
+		<!--
         <td width="9%">
-		<a href="#" rel="dropmenu1"><img src="images1/btn1.jpg" border=0/></a>
+		<a href="#" rel="dropmenu1"><img src="images1/NEWS.jpg" border=0/></a>
 		</td>
+		-->
 	    <td width="11%">
-		<a href="index.php"><img src="images1/frontpage.jpg" width="60" height="25" border="0" /></a>
+		<a href="index.php"><img src="images1/firstpage.jpg" width="60" height="25" border="0" /></a>
 		</td>
 	  </tr>
 	</table>
@@ -103,12 +105,13 @@
         <a  href="#"   >Place Name</a>
         <a  href="#"   >Place Name</a>
     </div>
-	<!-- newspapers -->                                                   
+	<!-- newspapers                                                   
 <div id="dropmenu1" class="dropmenudiv" >
-      <a href="index.php?nid=1"><img src="images/Daily K2.jpg" border="0" /></a>
+      <a href="index.php?nid=1"><img src="" border="0" /></a>
         <a href="#"><img src="" border="0" /></a>
         <a href="#"><img src="" border="0" /></a>
     </div>
+	--> 
 	   <script type="text/javascript">
       cssdropdown.startchrome("chromemenu")
       </script>
@@ -151,9 +154,9 @@ $pid = @$_GET['pid'];
 <table align="center">
 <tr>
 <td>
-<a href="#" target="_blank"><img src="images1/ttgb1.jpg" width="317" height="60" border="0"/></a></td>
+<a href="#" target="_blank"><img src="images1/ads1.png" width="317" height="60" border="0"/></a></td>
 <td>
-<a href="#" target="_blank"><img src="images1/ttgb2.jpg" width="317" height="60" border="0"/></a></td>
+<a href="#" target="_blank"><img src="images1/ads.jpg" width="317" height="60" border="0"/></a></td>
 <td>
 <a href="#" target="_blank"><img src="images1/ttgb1.jpg" width="317" height="60" border="0" /></a></td>
 </tr>
