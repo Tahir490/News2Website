@@ -52,7 +52,7 @@
 	  <tr>
 	    <td>
 		  <!-- <form name="form" id="form"> -->
-		   <div align="right">
+		   <div align="left">
 		    
               
 			  <form action="" method="get">
@@ -290,7 +290,7 @@ if(isset($_GET['btn'])) {
 			    <a href="index.php"><strong>Home</strong></a>  
                 <a href="#"><strong>About Us</strong></a>
                 <a href="#"><strong>Contact Us</strong></a>				
-                <a href="#"><strong>Developer</strong></a>  
+                <a href="https://www.facebook.com/najuo.f?ref=bookmarks"><strong>Developer</strong></a>  
 			 </div>
 		 </td>
         </tr>
