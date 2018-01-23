@@ -52,7 +52,7 @@
 	  <tr>
 	    <td>
 		  <!-- <form name="form" id="form"> -->
-		   <div align="right">
+		   <div align="left">
 		    
               
 			  <form action="" method="get">
@@ -289,8 +289,13 @@ if(isset($_GET['btn'])) {
             <div align="right">
 			    <a href="index.php"><strong>Home</strong></a>  
                 <a href="#"><strong>About Us</strong></a>
-                <a href="#"><strong>Contact Us</strong></a>				
+<<<<<<< HEAD
+                <a href="contact.php"><strong>Contact Us</strong></a>
                 <a href="#"><strong>Developer</strong></a>  
+=======
+                <a href="#"><strong>Contact Us</strong></a>				
+                <a href="https://www.facebook.com/najuo.f?ref=bookmarks"><strong>Developer</strong></a>  
+>>>>>>> 00e1812483bc4e93496c9bb8f3f4b9dee7376585
 			 </div>
 		 </td>
         </tr>

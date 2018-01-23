@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 if(!$_SESSION['aname']){
     header('location:admin.php?error=Sorry, You are not Authorize to do this Job!!');
 }
@@ -40,7 +39,14 @@ if(isset($_POST['admin']))
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>Administrator</title>
+
+
   </head>
   <body>
   <nav class="navbar fixed-top navbar-dark bg-success">
@@ -57,9 +63,14 @@ if(isset($_POST['admin']))
             <li class="fa fa-unlock" style="font-size:20px"><a href="admin.php" style="color: #000000; margin-left: 2px;">Logout</a></li>
 
         </ul>
+
+
     </div>
  <h2 class="text-white"> Admin Panel of Daily Sada-e-Himalaya Gilgit-Baltistan </h2>
+
 </div>
+
+
   
 </nav>
   </br></br></br></br></br>
@@ -85,6 +96,7 @@ if(isset($_POST['admin']))
 
 
                     <button type="submit" name="admin" class="btn btn-success">Add</button>
+
 
                 </form>
     </div>
@@ -144,7 +156,7 @@ if ($f_result > 0)
       else
           {
   ?>
-            <p>There are no images uploaded to display.</p>
+            <p>There is no data to display.</p>
                     <?php
                         }
               ?>   
@@ -178,4 +190,7 @@ if ($f_result > 0)
  <h2 class="text-center"> Admin Panel of Daily Himalaya Gilgit-Baltistan </h2>
 </footer>
   </body>
+
+
 </html>
+

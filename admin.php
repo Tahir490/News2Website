@@ -11,6 +11,8 @@ if(isset($_POST['login']))
     $result = mysqli_query($con, $query);
     if (mysqli_num_rows($result) > 0){
 
+
+
         header('Location: addAdmin.php');
 
     }
@@ -46,7 +48,7 @@ if(isset($_POST['login']))
             border: none;
             cursor: pointer;
             margin-left: 600px;
-            width: 10%;
+            width: 20%;
         }
 
         button:hover {
@@ -101,6 +103,8 @@ if(isset($_POST['login']))
  
  <h2 class="text-white"> Administrator  Panel of Daily Sada-e-Himalaya Gilgit-Baltistan </h2>
 </div>
+
+
   
 </nav>
   </br></br></br></br></br>
@@ -114,12 +118,13 @@ if(isset($_POST['login']))
 
     <div class="container">
         <label><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="aname" required>
+        <input type="text" placeholder="Enter Username" name="aname" >
 
         <label><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="apassword" required>
+        <input type="password" placeholder="Enter Password" name="apassword" >
 
         <button type="submit" name="login">Login</button>
+        <button type="submit" name="forget">Forget Password</button>
 
 
     </div>
@@ -131,3 +136,40 @@ if(isset($_POST['login']))
 </footer>
 </body>
 </html>
+
+<?php
+include("includes/connect.php");
+if(isset($_POST['forget'])) {
+
+$result = "SELECT * FROM admin_author";
+$run = mysqli_query($con, $result);
+$f_result = mysqli_num_rows($run);
+if ($f_result > 0) {
+while ($row = mysqli_fetch_array($run)) {
+
+$id = $row['id'];
+
+$name = $row['a_name'];
+
+$pass = $row['a_password'];
+
+$to = "himalayapublishing@gmail.com";
+$subject = "Password Recovery";
+
+$message = " This is an email to exclusively tell you about your Admin Panel's Password. It is strcitly advise not to disclose this password to anyone.\n
+username: $name\n Password : $pass ";
+
+$headers = "From : info@sadaehimalaya.com";
+if(mail($to, $subject, $message, $headers)){
+echo "<script>alert('Your Password has been sent to your Email ID')</script>";
+
+}else{
+echo "<script>alert('Failed to Recover your password, try again')</script>";
+
+}
+
+
+}
+}
+}
+?>
