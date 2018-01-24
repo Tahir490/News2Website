@@ -124,6 +124,7 @@ if(!$_SESSION['name']){
       
       <th align="center" style="text-align:center">#</th>
       <th align="center" style="text-align:center">Date</th>
+      <th align="center" style="text-align:center">File Name</th>
       <th align="center" style="text-align:center">Image</th>
       <th align="center" style="text-align:center">Delete</th>
       <th align="center" style="text-align:center">Update</th>
@@ -148,6 +149,8 @@ if ($f_result > 0)
             $id = $row['id'];
 
            $date_of = $row['date_to'];
+
+            $exten = $row['img_ext'];
   
            $img = "uploads/thumbs"."/".$row['file_name'];
 
@@ -156,6 +159,7 @@ if ($f_result > 0)
 
      <td align="center" style="padding-top: 1cm;"><?php echo $id; ?></td>
       <td align="center" style="padding-top: 1cm;"><?php echo $date_of; ?></td>
+        <td align="center" style="padding-top: 1cm;"><?php echo $exten; ?></td>
       <td width="90" rowspan="" >
         <center>
     <a href="<?php echo $img;?>">
@@ -217,7 +221,7 @@ if(isset($_POST["btn"])){
         $extension = array("jpeg","jpg","png","gif");
          
         $bytes = 1024;
-        $allowedKB = 1000;
+        $allowedKB = 5000;
         $totalBytes = $allowedKB * $bytes;
          
         if(isset($_FILES["files"])==false)
@@ -234,7 +238,7 @@ if(isset($_POST["btn"])){
              
             $file_name=$_FILES["files"]["name"][$key];
             $file_tmp=$_FILES["files"]["tmp_name"][$key];
-             print_r($file_name);
+            
             $ext=pathinfo($file_name,PATHINFO_EXTENSION);
  
             if(!in_array(strtolower($ext),$extension))
@@ -244,16 +248,17 @@ if(isset($_POST["btn"])){
             }               
              
             if($_FILES["files"]["size"][$key] > $totalBytes){
-                array_push($errors, "File size must be less than 100KB. Name:- ".$file_name);
+                array_push($errors, "File size must be less than 5MB. Name:- ".$file_name);
                 $uploadThisFile = false;
             }
              
             if($uploadThisFile){
+              $img_ext= pathinfo($file_name, PATHINFO_FILENAME);
                 $filename=basename($file_name,$ext);
                 $newFileName=$filename.$ext;
                 move_uploaded_file($_FILES["files"]["tmp_name"][$key],"uploads/thumbs/".$newFileName);
                  
-                $query = "INSERT INTO pages(date_to, file_name) VALUES('".date("Y-m-d")."','".$newFileName."')";
+                $query = "INSERT INTO pages(date_to, img_ext, file_name) VALUES('".date("Y-m-d")."','".$img_ext."','".$newFileName."')";
 
                 mysqli_query($con, $query); 
 

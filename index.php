@@ -86,18 +86,78 @@
    </div>
    <!-- pages -->
 <div id="dropmenu3" class="dropmenudiv"  style="text-align:left;">
-      <a href="#" ><strong>1-Front</strong></a>
-      <a href="#" ><strong>2-News</strong></a>
-      <a href="#" ><strong>3-News</strong></a>
-      <a href="#" ><strong>4-Editorial</strong></a>
-      <a href="#" ><strong>5-Sports</strong></a>
-      <a href="#" ><strong>6-Classified</strong></a>
-      <a href="#" ><strong>7- Baqia</strong></a>
-      <a href="#" ><strong>8-Back Page</strong></a>
-      <a href="#" ><strong>Sup1</strong></a>
-      <a href="#" ><strong>Sup2</strong></a>
-      <a href="#" ><strong>Sup3</strong></a>
-      <a href="#" ><strong>Sup4</strong></a>
+   <?php
+date_default_timezone_set("Asia/Karachi");
+    include("includes/connect.php");
+if(!isset($_GET['btn'])) {
+    $date = date("y.m.d");
+    $result = "select * from pages WHERE date_to = '$date'";
+    $run = mysqli_query($con, $result);
+    $f_result = mysqli_num_rows($run);
+    if ($f_result > 0) {
+        $count = 0;
+        while ($row = mysqli_fetch_array($run)) {
+
+            $id = $row['id'];
+            $date_of = $row["date_to"];
+            $exten = $row['img_ext'];
+            $img = "uploads/thumbs" . "/" . $row["file_name"];
+            ?>
+            <a href='index.php?pid=<?php echo $id; ?>'><?php echo $exten; ?></strong></a>
+            <?php
+            $count++;
+        }
+    }
+    elseif($f_result == 0) {
+        $result = "SELECT * FROM pages WHERE date_to BETWEEN DATE_ADD(CURDATE(), INTERVAL -2 day) AND CURDATE()";
+        $run = mysqli_query($con, $result);
+
+       if (mysqli_num_rows($run) > 0){
+           $count = 0;
+           while ($row = mysqli_fetch_array($run)) {
+               $id = $row['id'];
+               $date_of = $row["date_to"];
+                $exten = $row['img_ext'];
+               $img = "uploads/thumbs" . "/" . $row["file_name"];
+               ?>
+           <a href='index.php?pid=<?php echo $id; ?>'><?php echo $exten; ?></strong></a>
+               <?php
+               $count++;
+           }
+       }
+    }
+ }
+?>
+
+<?php
+    date_default_timezone_set("Asia/Karachi");
+    include("includes/connect.php");
+if(isset($_GET['btn'])) {
+
+          $search = $_GET['search'];
+          $que = "SELECT * FROM pages WHERE date_to = '$search'";
+          $run1 = mysqli_query($con, $que);
+          $f_result1 = mysqli_num_rows($run1);
+          if ($f_result1 > 0) {
+              $count = 0;
+              while ($row = mysqli_fetch_array($run1)) {
+                  $id = $row['id'];
+                  $date_of = $row['date_to'];
+                   $exten = $row['img_ext'];
+                  $img = "uploads/thumbs" . "/" . $row['file_name'];
+
+
+                  ?>
+                  <a href='index.php?pid=<?php echo $id; ?>'><?php echo $exten; ?></strong></a>
+                  <?php
+                  $count++;
+              }
+          }
+
+      }
+
+    ?>
+      
   </div>
   <!-- editions -->
 <div id="dropmenu2" class="dropmenudiv" style="text-align:left;">
@@ -134,6 +194,8 @@ $pid = @$_GET['pid'];
           $id = $row['id'];
 
            $date_of = $row['date_to'];
+
+            $exten = $row['img_ext'];
   
            $img = "uploads/thumbs"."/".$row['file_name'];
   
@@ -189,6 +251,7 @@ if(!isset($_GET['btn'])) {
 
             $id = $row['id'];
             $date_of = $row["date_to"];
+            $exten = $row['img_ext'];
             $img = "uploads/thumbs" . "/" . $row["file_name"];
             ?>
             <td width="91%" valign="middle">
@@ -211,6 +274,7 @@ if(!isset($_GET['btn'])) {
            while ($row = mysqli_fetch_array($run)) {
                $id = $row['id'];
                $date_of = $row["date_to"];
+                $exten = $row['img_ext'];
                $img = "uploads/thumbs" . "/" . $row["file_name"];
                ?>
                <td width="91%" valign="middle">
@@ -241,6 +305,7 @@ if(isset($_GET['btn'])) {
               while ($row = mysqli_fetch_array($run1)) {
                   $id = $row['id'];
                   $date_of = $row['date_to'];
+                   $exten = $row['img_ext'];
                   $img = "uploads/thumbs" . "/" . $row['file_name'];
 
 
@@ -289,18 +354,16 @@ if(isset($_GET['btn'])) {
             <div align="right">
 			    <a href="index.php"><strong>Home</strong></a>  
                 <a href="#"><strong>About Us</strong></a>
-<<<<<<< HEAD
-<<<<<<< HEAD
+
                 <a href="contact.php"><strong>Contact Us</strong></a>
                 <a href="#"><strong>Developer</strong></a>  
-=======
+
                 <a href="#"><strong>Contact Us</strong></a>				
                 <a href="https://www.facebook.com/najuo.f?ref=bookmarks"><strong>Developer</strong></a>  
->>>>>>> 00e1812483bc4e93496c9bb8f3f4b9dee7376585
-=======
+
                 <a href="#"><strong>Contact Us</strong></a>				
                 <a href="https://www.facebook.com/najuo.f?ref=bookmarks"><strong>Developer</strong></a>  
->>>>>>> 00e1812483bc4e93496c9bb8f3f4b9dee7376585
+
 			 </div>
 		 </td>
         </tr>
