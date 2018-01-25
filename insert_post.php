@@ -85,6 +85,7 @@ if(!$_SESSION['name']){
        while($row=mysqli_fetch_array($run)){
       $id = $row['id'];
       $date_of = $row['date_to'];
+        $exten = $row['img_ext'];
       $img = "uploads"."/".$row['file_name'];
 
     ?>
@@ -97,6 +98,7 @@ if(!$_SESSION['name']){
   <tr >
       <td><?php echo @$id; ?></td>
       <td><?php echo @$date_of; ?></td>
+      <td><?php echo @$exten; ?></td>
       <td><a href="<?php echo $img;?>">
     <img src="<?php echo @$img; ?>" width="100" height="100" border="0"></a>
   </td>
@@ -221,7 +223,7 @@ if(isset($_POST["btn"])){
         $extension = array("jpeg","jpg","png","gif");
          
         $bytes = 1024;
-        $allowedKB = 5000;
+        $allowedKB = 6000;
         $totalBytes = $allowedKB * $bytes;
          
         if(isset($_FILES["files"])==false)
@@ -248,7 +250,7 @@ if(isset($_POST["btn"])){
             }               
              
             if($_FILES["files"]["size"][$key] > $totalBytes){
-                array_push($errors, "File size must be less than 5MB. Name:- ".$file_name);
+                array_push($errors, "File size must be less than 6MB. Name:- ".$file_name);
                 $uploadThisFile = false;
             }
              

@@ -104,6 +104,7 @@ if(isset($_POST['update'])){
     $ext= GetImageExtension($imgtype);
     $imagename=date("d-m-Y")."-".time().$ext;
     $target_path = "uploads/thumbs/".$imagename;
+    $img_ext= pathinfo($file_name, PATHINFO_FILENAME);
     
    }
    }
@@ -111,7 +112,7 @@ if(isset($_POST['update'])){
       if(move_uploaded_file($temp_name, $target_path)) {
     
       
-    $que = "UPDATE pages set date_to = '$date', file_name='".$imagename."' where id='$edit_id'";
+    $que = "UPDATE pages set date_to = '$date', img_ext = '".$img_ext."' , file_name='".$imagename."' where id='$edit_id'";
       if(mysqli_query($con, $que)){
         header('location:insert_post.php?update=Data has been Updated Successfully!!!');
       }
