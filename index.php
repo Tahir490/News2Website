@@ -11,7 +11,7 @@
 </head>
 <body>
 <div id="head">
-<img src="images1/logo1.jpg" alt="Logo area" style="width:980px;height:180px">
+<img src="images1/logo.jpg" alt="Logo area" style="width:980px;height:180px">
 </div>
 <div id="header">
  <div id="ads">
@@ -232,7 +232,7 @@ $pid = @$_GET['pid'];
   
 <td width="5%" valign="top">
 <a href="/index.php?pageNum_thumbs=0&totalRows_thumbs=8">
-<img src="images1/left.jpg" border="0" title="prev" /></a>
+<img src="images1/loft.jpg" border="0" title="prev" /></a>
 </td>
 
 
@@ -336,7 +336,7 @@ if(isset($_GET['btn'])) {
 
 
 <td width="4%" align="right" valign="top">
-<a href=""><img src="images1/right.jpg" border="0" title="next" /></a>
+<a href=""><img src="images1/roght.jpg" border="0" title="next" /></a>
 </td>
 </tr>
 </table>
@@ -355,14 +355,8 @@ if(isset($_GET['btn'])) {
 			    <a href="index.php"><strong>Home</strong></a>  
                 <a href="#"><strong>About Us</strong></a>
 
-                <a href="contact.php"><strong>Contact Us</strong></a>
-                <a href="#"><strong>Developer</strong></a>  
-
-                <a href="#"><strong>Contact Us</strong></a>				
-                <a href="https://www.facebook.com/najuo.f?ref=bookmarks"><strong>Developer</strong></a>  
-
-                <a href="#"><strong>Contact Us</strong></a>				
-                <a href="https://www.facebook.com/najuo.f?ref=bookmarks"><strong>Developer</strong></a>  
+                <a href="contact.php"><strong>Contact Us</strong></a>			
+                <a href="https://www.facebook.com/najuo.f?ref=bookmarks"><strong>Developer</strong></a>    
 
 			 </div>
 		 </td>
