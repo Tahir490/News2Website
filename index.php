@@ -161,9 +161,9 @@ if(isset($_GET['btn'])) {
   </div>
   <!-- editions -->
 <div id="dropmenu2" class="dropmenudiv" style="text-align:left;">
-    <a  href="index.php?eid=1&nid=1"   >Gilgit</a>
-        <a  href="#"   >Place Name</a>
-        <a  href="#"   >Place Name</a>
+    <a  href="index.php?eid=1&nid=1"   >Gilgit-Baltistan</a>
+        <!--<a  href="#"   >Place Name</a>-->
+        <!--<a  href="#"   >Place Name</a>-->
     </div>
 	<!-- newspapers                                                   
 <div id="dropmenu1" class="dropmenudiv" >
