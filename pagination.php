@@ -18,7 +18,7 @@
  $result = mysqli_query($con, $query);  
  $output .= "  
       <table class='table table-bordered'>  
-           <tr class='bg-warning'> 
+           <tr class='bg-primary'> 
                 <td align='center'>#</td> 
                 <td align='center'>Date</td>  
                 <td align='center'>File Name</td>  

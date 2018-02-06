@@ -74,6 +74,7 @@ include("includes/connect.php");
     <option>Front</option>
     <option>News</option>
     <option>National</option>
+     <option>Columns</option>
     <option>Editorial</option>
      <option>Classified</option>
     <option>Sports</option>

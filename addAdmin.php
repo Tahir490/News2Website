@@ -36,12 +36,19 @@ if(isset($_POST['admin']))
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="insert_post.css" />
+   
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      
+           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />    
+         
+           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>   
+            <link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" /> 
     <title>Administrator</title>
     <style type="text/css">
       .navbar-right li a{
@@ -99,22 +106,36 @@ if(isset($_POST['admin']))
   </br></br></br></br></br>
 
 
-    <div class="container">
-
-
+   <div class="container">
+  <div class="row">
+    <div class="col-md-12"> 
+      <!-- Nav tabs -->
+      <div class="card">
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#admins" aria-controls="home" role="tab" data-toggle="tab"><i class="fa fa-user"></i>  <span>Admins</span></a></li>
+          <li role="presentation"><a href="#add" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-user-plus"></i>  <span>Add New Admins</span></a></li>
+        
+          
+        </ul>
+        
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane" id="add">
+            
+            
                 <form method="post" action="" >
                     <center>
-                        <div><h2 class="heading">Adding New Admin</h2></div>
+                        <div><h2 class="heading bg-secondary text-white">Add New Admin</h2></div>
                     </center>
 
                     <div class="form-group">
                         <label for="cnic">Name:</label>
-                        <input type="text" name="name" class="form-control"  placeholder="Enter Name">
+                        <input type="text" name="name" class="form-control"  placeholder="Enter Name" style="height: 40px; width: 40%" >
                     </div>
 
                     <div class="form-group">
                         <label for="add">Password:</label>
-                        <input type="password" name="password" class="form-control"  placeholder="Enter Password">
+                        <input type="password" name="password" class="form-control"  placeholder="Enter Password" style="height: 40px; width: 40%" >
                     </div>
 
 
@@ -122,17 +143,13 @@ if(isset($_POST['admin']))
 
 
                 </form>
-    </div>
-          </br>
 
-          
 
-  <center><font color="#A81008" size="8px"><?php echo @$_GET['delete']; ?></font></center>
-
-              <div class="container">
-      <div class="well">
-          <div class="responsive-table">
-              <table class="table table-bordered">
+          </div>
+          <div role="tabpanel" class="tab-pane active" id="admins"> 
+            
+               
+               <table class="table table-bordered">
 
                  <tr class="bg-danger">
 
@@ -185,6 +202,28 @@ if ($f_result > 0)
               ?>   
 
               </table>
+            
+</div>
+         
+         
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+ 
+          </br>
+
+          
+
+  <center><font color="#A81008" size="8px"><?php echo @$_GET['delete']; ?></font></center>
+
+              <div class="container">
+      <div class="well">
+          <div class="responsive-table">
+             
 
 
 

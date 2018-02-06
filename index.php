@@ -91,7 +91,7 @@ date_default_timezone_set("Asia/Karachi");
     include("includes/connect.php");
 if(!isset($_GET['btn'])) {
     $date = date("y.m.d");
-    $result = "select * from pages WHERE date_to = '$date'";
+    $result = "SELECT * FROM pages WHERE date_to = '$date'";
     $run = mysqli_query($con, $result);
     $f_result = mysqli_num_rows($run);
     if ($f_result > 0) {
@@ -216,7 +216,7 @@ $pid = @$_GET['pid'];
  <div id="maincontent">
  
   
-  <img id="mainImage" src="<?php echo $img; ?>" width="980" name="gallerya"/>
+  <img id="mainImage" src="<?php echo $save; ?>" width="980" name="gallerya"/>
 
 </div>
 
@@ -313,8 +313,8 @@ if(!isset($_GET['btn'])) {
 if(isset($_GET['btn'])) {
 
           $search = $_GET['search'];
-          $date = date_create($search);
-          echo date_format($date, 'Y-m-d');
+          //$date = date_create($search);
+          //echo date_format($date, 'Y-m-d');
           $que = "SELECT * FROM pages WHERE date_to = '$search'";
           $run1 = mysqli_query($con, $que);
           $f_result1 = mysqli_num_rows($run1);

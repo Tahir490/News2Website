@@ -54,15 +54,15 @@ if(!$_SESSION['name']){
       <!-- Nav tabs -->
       <div class="card">
         <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><i class="fa fa-database"></i>  <span>Insert Pages</span></a></li>
-          <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-user"></i>  <span>Pages</span></a></li>
-          <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab"><i class="fa fa-search"></i>  <span>Search</span></a></li>
+          <li role="presentation" class="active"><a href="#insert" aria-controls="home" role="tab" data-toggle="tab"><i class="fa fa-database"></i>  <span>Insert Pages</span></a></li>
+          <li role="presentation"><a href="#pages" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-file"></i>  <span>Pages</span></a></li>
+          <li role="presentation"><a href="#search" aria-controls="messages" role="tab" data-toggle="tab"><i class="fa fa-search"></i>  <span>Search</span></a></li>
           
         </ul>
         
         <!-- Tab panes -->
         <div class="tab-content">
-          <div role="tabpanel" class="tab-pane active" id="home">
+          <div role="tabpanel" class="tab-pane active" id="insert">
             
             <form method="post" action="" enctype="multipart/form-data">
         <center>
@@ -86,6 +86,7 @@ if(!$_SESSION['name']){
     <option>Front</option>
     <option>News</option>
     <option>National</option>
+    <option>Columns</option>
     <option>Editorial</option>
      <option>Classified</option>
     <option>Sports</option>
@@ -101,7 +102,7 @@ if(!$_SESSION['name']){
      <center><font color="#0851EE" size="8px"><?php echo @$_GET['update']; ?></font></center>
 
           </div>
-          <div role="tabpanel" class="tab-pane" id="profile"> 
+          <div role="tabpanel" class="tab-pane" id="pages"> 
             
                
                 <div class="table-responsive" id="pagination_data">  
@@ -109,9 +110,9 @@ if(!$_SESSION['name']){
            
             
 </div>
-          <div role="tabpanel" class="tab-pane" id="messages">
+          <div role="tabpanel" class="tab-pane" id="search">
             
-             <div >
+             <div>
   <form  action="insert_post.php" method="get">
 
       <input type="date" name="search" />
@@ -119,6 +120,17 @@ if(!$_SESSION['name']){
   <button type="submit" name="btn" class="btn btn-danger" style="margin-left: 10px;">Search Here</button>
 </form>
 </div>
+<br>
+ <table class="table table-bordered">
+
+            <tr class='bg-primary'> 
+                <td align='center'>#</td> 
+                <td align='center'>Date</td>  
+                <td align='center'>File Name</td>  
+                <td align='center'>Image</td>  
+                <td align='center'>Delete</td>
+                <td align='center'>Update</td>    
+           </tr> 
 
   <?php
   include("includes/connect.php");
@@ -129,7 +141,8 @@ if(!$_SESSION['name']){
        $que = "SELECT * FROM pages WHERE date_to = '$search'";
        $run = mysqli_query($con, $que);
        while($row=mysqli_fetch_array($run)){
-      $id = $row['id'];
+
+            $id = $row['id'];
 
            $date_of = $row['date_to'];
 
@@ -138,19 +151,27 @@ if(!$_SESSION['name']){
             $filename = $row['file_name'];
 
     ?>
-  <div class="container">
-      <div class="well">
-          <div class="responsive-table">
-              <table class="table table-bordered">
+ 
+     
+   
+                  
 
 
   <tr >
-      <td><?php echo @$id; ?></td>
-      <td><?php echo @$date_of; ?></td>
-      <td><?php echo @$filename; ?></td>
-      <td><a href="<?php echo $save;?>">
+       <td align="center" style="padding-top: 1cm;"><?php echo @$id; ?></td>
+       <td align="center" style="padding-top: 1cm;"><?php echo @$date_of; ?></td>
+       <td align="center" style="padding-top: 1cm;"><?php echo @$filename; ?></td>
+      <td align="center" style="padding-top: 1cm;"><a href="<?php echo $save;?>">
     <img src="<?php echo @$save; ?>" width="100" height="100" border="0"></a>
   </td>
+  <td align="center" style="padding-top: 1cm;"><a href='delete.php?delete=<?php echo $id;?>' class="btn btn-danger">Delete</a>
+       
+      </td>
+       <td align="center" style="padding-top: 1cm;">
+        <a href='update_img.php?update=<?php echo $id;?>' class="btn btn-primary">Update Image</a>
+        <a href='update_name.php?update=<?php echo $id;?>' class="btn btn-info">Update Name</a>
+
+      </td> 
 
 
 
@@ -168,6 +189,9 @@ if(!$_SESSION['name']){
     </div>
   </div>
 </div>
+
+    
+
 
     
 
@@ -281,7 +305,7 @@ if(isset($_POST["btn"])){
     }
   }        
              $ext= GetImageExtension($imgtype);
-            $imagename=date("d-m-Y")."-".date("h:i:sa").$ext;
+            $imagename=date("d-m-Y")."-".date("h-i-sa").$ext;
                 move_uploaded_file($_FILES["files"]["tmp_name"][$key],"uploads/thumbs/".$imagename);
                  
                 $query = "INSERT INTO pages(date_to, save_name, file_name ) VALUES('$date', '".$imagename."', '$name')";
