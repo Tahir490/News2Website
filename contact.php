@@ -10,6 +10,9 @@
     <link href="https://fonts.googleapis.com/css?family=Oleo+Script:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Teko:400,700" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <style type="text/css">
 
@@ -86,11 +89,11 @@
     </div>
     <div class="contact-section">
         <div class="container">
-            <form method="post" action="">
+            <form method="post" action="" id="form">
                 <div class="col-md-6 form-line">
                     <div class="form-group">
                         <label for="exampleInputUsername">Your name*</label>
-                        <input type="text" class="form-control" id="" name="name" placeholder=" Enter Name" required>
+                        <input type="text" class="form-control" id="" name="name" placeholder=" Enter Name" >
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail">Email Address*</label>
@@ -101,20 +104,20 @@
                         <input type="text" class="form-control" name="subject" id="telephone" placeholder=" Enter Subject of Your Message" required>
                     </div>
                 </div>
-                <div class="col-md-6" style="margin-left: 570px;  margin-top: -260px;">
+                <div class="col-md-6" style="margin-left: 585px;  margin-top: -223px;">
                     <div class="form-group">
                         <label for="telephone">What is 2+3+1? (Anti Spam)*</label>
-                        <input type="tel" class="form-control" name="human" id="telephone" placeholder=" Prove You are not a Rebot" required>
+                        <input type="tel" class="form-control" name="human" id="telephone" placeholder=" Prove You are not a Rebot" >
                     </div>
                     <div class="form-group">
                         <label for ="description"> Message*</label>
-                        <textarea  class="form-control" name="message" id="description" placeholder="Enter Your Message" required></textarea>
+                        <textarea  class="form-control" name="message" id="message" placeholder="Enter Your Message" required></textarea>
                     </div>
 
 
 
                 </div>
-                <button type="submit" name="contact" class="btn btn-info" style="float: right;">
+                <button type="submit" name="contact" id= "description" class="btn btn-info" style="float: right; margin-right: -10px; ">
                    Send Message</button>
             </form>
         </div>
@@ -124,8 +127,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
 </body>
-</html>
 
+
+</html>
 <?php
 include("includes/connect.php");
 if(isset($_POST['contact'])){
@@ -146,7 +150,7 @@ if(isset($_POST['contact'])){
             if ($human == '6') {
                 if (mail ($to, $subj, $body, $from)) {
                     $query = "INSERT INTO email (username,email,subject,human,message)
-	values('$name', '$email', '$subj','$human', '$msg')";
+    values('$name', '$email', '$subj','$human', '$msg')";
                     if(mysqli_query($con, $query))
                     {
                         echo "<script>alert('Thank You $name, We will get back to you...')</script>";

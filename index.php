@@ -99,11 +99,14 @@ if(!isset($_GET['btn'])) {
         while ($row = mysqli_fetch_array($run)) {
 
             $id = $row['id'];
-            $date_of = $row["date_to"];
-            $exten = $row['img_ext'];
-            $img = "uploads/thumbs" . "/" . $row["file_name"];
+
+           $date_of = $row['date_to'];
+
+            $save = "uploads/thumbs"."/".$row['save_name'];
+
+            $filename = $row['file_name'];
             ?>
-            <a href='index.php?pid=<?php echo $id; ?>'><?php echo $exten; ?></strong></a>
+            <a href='index.php?pid=<?php echo $id; ?>'><?php echo $filename; ?></strong></a>
             <?php
             $count++;
         }
@@ -116,11 +119,14 @@ if(!isset($_GET['btn'])) {
            $count = 0;
            while ($row = mysqli_fetch_array($run)) {
                $id = $row['id'];
-               $date_of = $row["date_to"];
-                $exten = $row['img_ext'];
-               $img = "uploads/thumbs" . "/" . $row["file_name"];
+
+           $date_of = $row['date_to'];
+
+            $save = "uploads/thumbs"."/".$row['save_name'];
+
+            $filename = $row['file_name'];
                ?>
-           <a href='index.php?pid=<?php echo $id; ?>'><?php echo $exten; ?></strong></a>
+           <a href='index.php?pid=<?php echo $id; ?>'><?php echo $filename; ?></strong></a>
                <?php
                $count++;
            }
@@ -141,14 +147,17 @@ if(isset($_GET['btn'])) {
           if ($f_result1 > 0) {
               $count = 0;
               while ($row = mysqli_fetch_array($run1)) {
-                  $id = $row['id'];
-                  $date_of = $row['date_to'];
-                   $exten = $row['img_ext'];
-                  $img = "uploads/thumbs" . "/" . $row['file_name'];
+                   $id = $row['id'];
+
+           $date_of = $row['date_to'];
+
+            $save = "uploads/thumbs"."/".$row['save_name'];
+
+            $filename = $row['file_name'];
 
 
                   ?>
-                  <a href='index.php?pid=<?php echo $id; ?>'><?php echo $exten; ?></strong></a>
+                  <a href='index.php?pid=<?php echo $id; ?>'><?php echo $filename; ?></strong></a>
                   <?php
                   $count++;
               }
@@ -191,14 +200,14 @@ $pid = @$_GET['pid'];
       {
           while($row = mysqli_fetch_array($run))
       {
-          $id = $row['id'];
+         $id = $row['id'];
 
            $date_of = $row['date_to'];
 
-            $exten = $row['img_ext'];
-  
-           $img = "uploads/thumbs"."/".$row['file_name'];
-  
+            $save = "uploads/thumbs"."/".$row['save_name'];
+
+            $filename = $row['file_name'];
+
     }
   }
 
@@ -249,14 +258,18 @@ if(!isset($_GET['btn'])) {
         $count = 0;
         while ($row = mysqli_fetch_array($run)) {
 
-            $id = $row['id'];
-            $date_of = $row["date_to"];
-            $exten = $row['img_ext'];
-            $img = "uploads/thumbs" . "/" . $row["file_name"];
+           $id = $row['id'];
+
+           $date_of = $row['date_to'];
+
+            $save = "uploads/thumbs"."/".$row['save_name'];
+
+            $filename = $row['file_name'];
+
             ?>
             <td width="91%" valign="middle">
                 <a href='index.php?pid=<?php echo $id; ?>'><img id="imageIcon<?php echo $count; ?>"
-                                                                src="<?php echo $img; ?>" alt="Page # 1" width="82"
+                                                                src="<?php echo $save; ?>" alt="Page # 1" width="82"
                                                                 height="82" border="2"
                                                                 style="border-color: #0099CC"/></a>
                 &nbsp;&nbsp;
@@ -273,13 +286,16 @@ if(!isset($_GET['btn'])) {
            $count = 0;
            while ($row = mysqli_fetch_array($run)) {
                $id = $row['id'];
-               $date_of = $row["date_to"];
-                $exten = $row['img_ext'];
-               $img = "uploads/thumbs" . "/" . $row["file_name"];
+
+           $date_of = $row['date_to'];
+
+            $save = "uploads/thumbs"."/".$row['save_name'];
+
+            $filename = $row['file_name'];
                ?>
                <td width="91%" valign="middle">
                    <a href='index.php?pid=<?php echo $id; ?>'><img id="imageIcon<?php echo $count; ?>"
-                                                                   src="<?php echo $img; ?>" alt="Page # 1" width="82"
+                                                                   src="<?php echo $save; ?>" alt="Page # 1" width="82"
                                                                    height="82" border="2"
                                                                    style="border-color: #0099CC"/></a>
                    &nbsp;&nbsp;
@@ -297,6 +313,8 @@ if(!isset($_GET['btn'])) {
 if(isset($_GET['btn'])) {
 
           $search = $_GET['search'];
+          $date = date_create($search);
+          echo date_format($date, 'Y-m-d');
           $que = "SELECT * FROM pages WHERE date_to = '$search'";
           $run1 = mysqli_query($con, $que);
           $f_result1 = mysqli_num_rows($run1);
@@ -304,9 +322,12 @@ if(isset($_GET['btn'])) {
               $count = 0;
               while ($row = mysqli_fetch_array($run1)) {
                   $id = $row['id'];
-                  $date_of = $row['date_to'];
-                   $exten = $row['img_ext'];
-                  $img = "uploads/thumbs" . "/" . $row['file_name'];
+
+           $date_of = $row['date_to'];
+
+            $save = "uploads/thumbs"."/".$row['save_name'];
+
+            $filename = $row['file_name'];
 
 
                   ?>
@@ -314,7 +335,7 @@ if(isset($_GET['btn'])) {
 
 
                       <a href='index.php?pid=<?php echo $id; ?>'><img id="imageIcon<?php echo $count; ?>"
-                                                                      src="<?php echo $img; ?>" alt="Page # 1"
+                                                                      src="<?php echo $save; ?>" alt="Page # 1"
                                                                       width="82" height="82" border="2"
                                                                       style="border-color: #0099CC"/></a>
                       &nbsp;&nbsp;

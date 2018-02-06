@@ -39,13 +39,22 @@ if(isset($_POST['admin']))
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>Administrator</title>
+    <style type="text/css">
+      .navbar-right li a{
+        color: #000000;
+        margin-top: 10px;
+         background-color: #ffffff;
 
+
+      }
+      
+
+
+    </style>
 
   </head>
   <body>
@@ -65,8 +74,22 @@ if(isset($_POST['admin']))
         </ul>
 
 
+
     </div>
  <h2 class="text-white"> Admin Panel of Daily Sada-e-Himalaya Gilgit-Baltistan </h2>
+
+ <ul class="nav navbar-nav navbar-right">
+ 
+     <li class="dropdown">
+ 
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="label label-pill label-danger count" style="border-radius:10px;"></span> <span class="glyphicon glyphicon-bell" style="font-size:18px; "></span></a>
+ 
+      <ul class="dropdown-menu"></ul>
+ 
+     </li>
+ 
+    </ul>
+      
 
 </div>
 
@@ -190,7 +213,62 @@ if ($f_result > 0)
  <h2 class="text-center"> Admin Panel of Daily Himalaya Gilgit-Baltistan </h2>
 </footer>
   </body>
-
+<script>
+$(document).ready(function(){
+ 
+ function load_unseen_notification(view = '')
+ {
+  $.ajax({
+   url:"fetch.php",
+   method:"POST",
+   data:{view:view},
+   dataType:"json",
+   success:function(data)
+   {
+    $('.dropdown-menu').html(data.notification);
+    if(data.unseen_notification > 0)
+    {
+     $('.count').html(data.unseen_notification);
+    }
+   }
+  });
+ }
+ 
+ load_unseen_notification();
+ 
+ $('#form').on('submit', function(event){
+  event.preventDefault();
+  if($('#subject').val() != '' && $('#message').val() != '')
+  {
+   var form_data = $(this).serialize();
+   $.ajax({
+    url:"contact.php",
+    method:"POST",
+    data:form_data,
+    success:function(data)
+    {
+     $('#form')[0].reset();
+     load_unseen_notification();
+    }
+   });
+  }
+  else
+  {
+   alert("Both Fields are Required");
+  }
+ });
+ 
+ $(document).on('click', '.dropdown-toggle', function(){
+  $('.count').html('');
+  load_unseen_notification('yes');
+ });
+ 
+ setInterval(function(){ 
+  load_unseen_notification();; 
+ }, 5000);
+ 
+});
+</script>
 
 </html>
 

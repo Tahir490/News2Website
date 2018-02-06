@@ -10,10 +10,19 @@ if(!$_SESSION['name']){
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="insert_post.css" />
+   
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />    
+         
+           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>   
+            <link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" /> 
+             
     <title>Admin</title>
   </head>
   <body>
@@ -38,30 +47,71 @@ if(!$_SESSION['name']){
 </div>
   
 </nav>
-  </br></br></br></br></br>
-
-    <div class="container">
-      
-      <form method="post" action="" enctype="multipart/form-data">
+  </br></br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12"> 
+      <!-- Nav tabs -->
+      <div class="card">
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><i class="fa fa-database"></i>  <span>Insert Pages</span></a></li>
+          <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-user"></i>  <span>Pages</span></a></li>
+          <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab"><i class="fa fa-search"></i>  <span>Search</span></a></li>
+          
+        </ul>
+        
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="home">
+            
+            <form method="post" action="" enctype="multipart/form-data">
         <center>
             <div><h2 class="heading bg-secondary text-white">Post New News</h2></div>
         </center>
   <div class="form-group">
     <label for="img"><b>Select maxmimum 8 files here:</b></label>
-    <input type="file" name="files[]" class="form-control" id="img"  multiple>
+    <input type="file" name="files[]" class="form-control" id="img" style="height: 40px; width: 40%" >
     
   </div>
+
+  <div class="form-group">
+    <label for="img"><b>Select Date here:</b></label>
+    <input type="date" name="date" class="form-control" style="height: 40px; width: 40%" >
+    
+  </div>
+
+  <div class="form-group">
+  <label for="sel1">Select Name here:</label>
+  <select class="form-control" name="name" style="height: 40px; width: 40%">
+    <option>Front</option>
+    <option>News</option>
+    <option>National</option>
+    <option>Editorial</option>
+     <option>Classified</option>
+    <option>Sports</option>
+    <option>Baqia</option>
+    <option>Back Page</option>
+  </select>
+</div>
  
   
   <button type="submit" name="btn" class="btn btn-success">Upload</button>
 </form>
-    </div>
-
- <center><font color="#A81008" size="8px"><?php echo @$_GET['delete']; ?></font></center>
+<center><font color="#A81008" size="8px"><?php echo @$_GET['delete']; ?></font></center>
      <center><font color="#0851EE" size="8px"><?php echo @$_GET['update']; ?></font></center>
 
-  </br>
-  <div style="margin-left: 910px; margin-bottom: 10px;">
+          </div>
+          <div role="tabpanel" class="tab-pane" id="profile"> 
+            
+               
+                <div class="table-responsive" id="pagination_data">  
+                </div>  
+           
+            
+</div>
+          <div role="tabpanel" class="tab-pane" id="messages">
+            
+             <div >
   <form  action="insert_post.php" method="get">
 
       <input type="date" name="search" />
@@ -70,11 +120,7 @@ if(!$_SESSION['name']){
 </form>
 </div>
 
-
-
-
-
-   <?php
+  <?php
   include("includes/connect.php");
     if(isset($_GET['btn'])){
 
@@ -84,9 +130,12 @@ if(!$_SESSION['name']){
        $run = mysqli_query($con, $que);
        while($row=mysqli_fetch_array($run)){
       $id = $row['id'];
-      $date_of = $row['date_to'];
-        $exten = $row['img_ext'];
-      $img = "uploads"."/".$row['file_name'];
+
+           $date_of = $row['date_to'];
+
+            $save = "uploads/thumbs"."/".$row['save_name'];
+
+            $filename = $row['file_name'];
 
     ?>
   <div class="container">
@@ -98,9 +147,9 @@ if(!$_SESSION['name']){
   <tr >
       <td><?php echo @$id; ?></td>
       <td><?php echo @$date_of; ?></td>
-      <td><?php echo @$exten; ?></td>
-      <td><a href="<?php echo $img;?>">
-    <img src="<?php echo @$img; ?>" width="100" height="100" border="0"></a>
+      <td><?php echo @$filename; ?></td>
+      <td><a href="<?php echo $save;?>">
+    <img src="<?php echo @$save; ?>" width="100" height="100" border="0"></a>
   </td>
 
 
@@ -112,86 +161,28 @@ if(!$_SESSION['name']){
     </tr>
   </table><br><br>
     <?php } ?>
-
-   <p><br/></p>
-    <div class="container">
-      
+          </div>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
     
 
-      <table class="table" border="3">
  
-    <tr class="bg-warning">
 
-      
-      <th align="center" style="text-align:center">#</th>
-      <th align="center" style="text-align:center">Date</th>
-      <th align="center" style="text-align:center">File Name</th>
-      <th align="center" style="text-align:center">Image</th>
-      <th align="center" style="text-align:center">Delete</th>
-      <th align="center" style="text-align:center">Update</th>
-    </tr>
-  
-  <tbody>
-                
-    <tr> 
-
-      <?php
-    include("includes/connect.php"); 
-
-$date = date("y.m.d");
-$result ="SELECT * FROM pages order by id desc";
-$run = mysqli_query($con, $result);
-$f_result = mysqli_num_rows($run);
-if ($f_result > 0)
-      {
-          while($row = mysqli_fetch_array($run))
-      {
-
-            $id = $row['id'];
-
-           $date_of = $row['date_to'];
-
-            $exten = $row['img_ext'];
-  
-           $img = "uploads/thumbs"."/".$row['file_name'];
+  </br>
+ 
 
 
-?>
-
-     <td align="center" style="padding-top: 1cm;"><?php echo $id; ?></td>
-      <td align="center" style="padding-top: 1cm;"><?php echo $date_of; ?></td>
-        <td align="center" style="padding-top: 1cm;"><?php echo $exten; ?></td>
-      <td width="90" rowspan="" >
-        <center>
-    <a href="<?php echo $img;?>">
-    <img src="<?php echo $img; ?>" width="100" height="100" border="0"></a>
-  </center>
-    </td>
-      <td align="center" style="padding-top: 1cm;"><a href='delete.php?delete=<?php echo $id; ?>' class="btn btn-danger">Delete</a></td>
-       <td align="center" style="padding-top: 1cm;"><a href='update.php?update=<?php echo $id; ?>' class="btn btn-primary">Update</a></td>
-  
 
 
-        </tr>
- <?php
-}
-   }
-      else
-          {
-  ?>
-            <p>There are no images uploaded to display.</p>
-                    <?php
-                        }
-              ?>          
-   
-    
-     
-  
 
-  </tbody>
-</table>
-    </div>  
+ 
+
+ 
 
    
 
@@ -201,23 +192,44 @@ if ($f_result > 0)
    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
-
+    
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <footer class="bg-success text-white">
  <h2 class="text-center"> Admin Panel of Daily Himalaya Gilgit-Baltistan </h2>
 </footer>
   </body>
 </html>
-
+ <script>  
+ $(document).ready(function(){  
+      load_data();  
+      function load_data(page)  
+      {  
+           $.ajax({  
+                url:"pagination.php",  
+                method:"POST",  
+                data:{page:page},  
+                success:function(data){  
+                     $('#pagination_data').html(data);  
+                }  
+           })  
+      }  
+      $(document).on('click', '.pagination_link', function(){  
+           var page = $(this).attr("id");  
+           load_data(page);  
+      });  
+ });  
+ </script>  
 
 
 <?php
   
   include("includes/connect.php");
   date_default_timezone_set("Asia/Karachi");
-if(isset($_POST["btn"])){     
+if(isset($_POST["btn"])){  
+   
+        $name=mysqli_real_escape_string($con, $_POST['name']);
+    $date=mysqli_real_escape_string($con,$_POST['date']);   
         $errors = array();
          
         $extension = array("jpeg","jpg","png","gif");
@@ -240,6 +252,7 @@ if(isset($_POST["btn"])){
              
             $file_name=$_FILES["files"]["name"][$key];
             $file_tmp=$_FILES["files"]["tmp_name"][$key];
+             $imgtype=$_FILES["files"]["type"][$key];
             
             $ext=pathinfo($file_name,PATHINFO_EXTENSION);
  
@@ -255,12 +268,23 @@ if(isset($_POST["btn"])){
             }
              
             if($uploadThisFile){
-              $img_ext= pathinfo($file_name, PATHINFO_FILENAME);
-                $filename=basename($file_name,$ext);
-                $newFileName=$filename.$ext;
-                move_uploaded_file($_FILES["files"]["tmp_name"][$key],"uploads/thumbs/".$newFileName);
+               function GetImageExtension($imgtype)
+ {
+  if(empty($imgtype)) return false;
+  switch($imgtype)
+  { 
+  case 'image/bmp': return '.bmp';
+  case 'image/gif': return '.gif';
+  case 'image/jpeg': return '.jpg';
+  case 'image/png': return '.png';
+  default: return false;
+    }
+  }        
+             $ext= GetImageExtension($imgtype);
+            $imagename=date("d-m-Y")."-".date("h:i:sa").$ext;
+                move_uploaded_file($_FILES["files"]["tmp_name"][$key],"uploads/thumbs/".$imagename);
                  
-                $query = "INSERT INTO pages(date_to, img_ext, file_name) VALUES('".date("Y-m-d")."','".$img_ext."','".$newFileName."')";
+                $query = "INSERT INTO pages(date_to, save_name, file_name ) VALUES('$date', '".$imagename."', '$name')";
 
                 mysqli_query($con, $query); 
 
