@@ -17,7 +17,9 @@
  <div id="ads">
   <table align="center">
     <tr>
-      <?php
+     
+	   <td>
+       <?php
   include("includes/connect.php");
    
        $que = "SELECT * FROM ads WHERE id = 1";
@@ -30,16 +32,44 @@
 
             
     ?>
-	   <td>
-	     <a href="<?php echo $name; ?>" target="_blank"><img src="<?php echo $name; ?>" alt="image" width="317" height="90"  border="0"  /></a>
+	     <a href="#" target="_blank"><img src="<?php echo $name; ?>" alt="image" width="317" height="90"  border="0"  /></a>
+        <?php } ?>
 	   </td>
-      <?php } ?>
+     
 	   <td>
-	     <a href="" target="_blank"><img src="images1/tggb.jpg" alt="image" width="317" height="90"  border="0" /></a>
+      <?php
+  include("includes/connect.php");
+   
+       $que = "SELECT * FROM ads WHERE id = 2";
+       $run = mysqli_query($con, $que);
+       while($row=mysqli_fetch_array($run)){
+
+            $id = $row['id'];
+
+           $name = "uploads/ads"."/".$row['save_name'];
+
+            
+    ?>
+	     <a href="#" target="_blank"><img src="<?php echo $name; ?>" alt="image" width="317" height="90"  border="0" /></a>
+       <?php } ?>
 	   </td>
 	   <td>
-	      <a href="https://www.facebook.com/TGGBPK/" target="_blank"><img src="images1/ttgb2.jpg" alt="image" width="317" height="90" border="0" /></a>
-	   </td>
+      <?php
+  include("includes/connect.php");
+   
+       $que = "SELECT * FROM ads WHERE id = 3";
+       $run = mysqli_query($con, $que);
+       while($row=mysqli_fetch_array($run)){
+
+            $id = $row['id'];
+
+           $name = "uploads/ads"."/".$row['save_name'];
+
+            
+    ?>
+	      <a href="#" target="_blank"><img src="<?php echo $name; ?>" alt="image" width="317" height="90" border="0" /></a>
+	    <?php } ?>
+     </td>
 	</tr>
   </table>
  </div>
@@ -239,11 +269,53 @@ $pid = @$_GET['pid'];
 <table align="center">
 <tr>
 <td>
-<a href="#" target="_blank"><img src="images1/ads1.png" width="317" height="60" border="0"/></a></td>
+  <?php
+  include("includes/connect.php");
+   
+       $que = "SELECT * FROM ads WHERE id = 4";
+       $run = mysqli_query($con, $que);
+       while($row=mysqli_fetch_array($run)){
+
+            $id = $row['id'];
+
+           $name = "uploads/ads"."/".$row['save_name'];
+
+            
+    ?>
+<a href="#" target="_blank"><img src="<?php echo $name; ?>" width="317" height="60" border="0"/></a></td>
+<?php } ?>
 <td>
-<a href="#" target="_blank"><img src="images1/ads.jpg" width="317" height="60" border="0"/></a></td>
+  <?php
+  include("includes/connect.php");
+   
+       $que = "SELECT * FROM ads WHERE id = 5";
+       $run = mysqli_query($con, $que);
+       while($row=mysqli_fetch_array($run)){
+
+            $id = $row['id'];
+
+           $name = "uploads/ads"."/".$row['save_name'];
+
+            
+    ?>
+<a href="#" target="_blank"><img src="<?php echo $name; ?>" width="317" height="60" border="0"/></a></td>
+<?php } ?>
 <td>
-<a href="#" target="_blank"><img src="images1/ttgb1.jpg" width="317" height="60" border="0" /></a></td>
+  <?php
+  include("includes/connect.php");
+   
+       $que = "SELECT * FROM ads WHERE id = 6";
+       $run = mysqli_query($con, $que);
+       while($row=mysqli_fetch_array($run)){
+
+            $id = $row['id'];
+
+           $name = "uploads/ads"."/".$row['save_name'];
+
+            
+    ?>
+<a href="#" target="_blank"><img src="<?php echo $name; ?>" width="317" height="60" border="0" /></a></td>
+<?php } ?>
 </tr>
 </table>
 </div>

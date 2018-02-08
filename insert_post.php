@@ -144,7 +144,6 @@ if(!$_SESSION['name']){
             <tr class='bg-primary'> 
                 <td align='center'>#</td> 
                 <td align='center'>Ads</td>   
-                <td align='center'>Delete</td>
                 <td align='center'>Update</td>    
            </tr> 
 
@@ -167,11 +166,9 @@ if(!$_SESSION['name']){
       <td align="center" style="padding-top: 1cm;"><a href="<?php echo $name;?>">
     <img src="<?php echo @$name; ?>" width="100" height="100" border="0"></a>
   </td>
-  <td align="center" style="padding-top: 1cm;"><a href='delete.php?delete=<?php echo $id;?>' class="btn btn-danger">Delete</a>
-       
-      </td>
+ 
        <td align="center" style="padding-top: 1cm;">
-        <a href='update_img.php?update=<?php echo $id;?>' class="btn btn-primary">Update</a>
+        <a href='update_ad.php?update=<?php echo $id;?>' class="btn btn-primary">Update</a>
       </td> 
 </tr>
      <?php } ?>
@@ -382,7 +379,7 @@ if(isset($_POST["btn"])){
 
                 mysqli_query($con, $query); 
 
-                echo "<script>alert('Pictures has been uploaded...')</script>"; 
+                echo "<script>alert('Pages has been uploaded...')</script>"; 
                  
                            
             }
@@ -446,7 +443,7 @@ include("includes/connect.php");
   if(move_uploaded_file($temp_name, $target_path) ) {
     
     
-    echo "<script>alert('Data has been inserted...')</script>"; 
+    echo "<script>alert('Ad has been uploaded...')</script>"; 
   } 
   else{
     exit("Error While uploading image on the server");

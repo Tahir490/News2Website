@@ -137,7 +137,7 @@ if(isset($_POST['update'])){
       
     $que = "UPDATE pages set date_to = '$date', save_name = '".$imagename."' , file_name='".$name."' WHERE id='$edit_id'";
       if(mysqli_query($con, $que)){
-        header('location:insert_post.php?update=Data has been Updated Successfully!!!');
+        header('location:insert_post.php?update=Page has been Updated Successfully!!!');
       }
   }
 }
