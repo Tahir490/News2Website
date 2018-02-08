@@ -56,7 +56,7 @@ if(!$_SESSION['name']){
         <ul class="nav nav-tabs" role="tablist">
           <li role="presentation" class="active"><a href="#insert_pages" aria-controls="insert_pages" role="tab" data-toggle="tab"><i class="fa fa-database"></i>  <span>Insert Pages</span></a></li>
           <li role="presentation"><a href="#pages" aria-controls="pages" role="tab" data-toggle="tab"><i class="fa fa-file"></i>  <span>Pages</span></a></li>
-          <li role="presentation"><a href="#insert_ads" aria-controls="insert_ads" role="tab" data-toggle="tab"><i class="fa fa-file"></i><span>Insert Ads</span></a></li>
+        
           <li role="presentation"><a href="#ads" aria-controls="ads" role="tab" data-toggle="tab"><i class="fa fa-file"></i><span>Ads</span></a></li>
           <li role="presentation"><a href="#search" aria-controls="search" role="tab" data-toggle="tab"><i class="fa fa-search"></i><span>Search</span></a></li>
           
@@ -80,7 +80,7 @@ if(!$_SESSION['name']){
 
   <div class="form-group">
     <label for="img"><b>Select Date here:</b></label>
-    <input type="date" name="date" class="form-control" style="height: 40px; width: 40%" >
+    <input type="text" name="date" class="form-control" placeholder="YYYY-MM-DD" style="height: 40px; width: 40%" >
     
   </div>
 
@@ -122,20 +122,7 @@ if(!$_SESSION['name']){
             
 </div>
 
- <div role="tabpanel" class="tab-pane" id="insert_ads"> 
-     <form method="post" action="" enctype="multipart/form-data">
-        <center>
-            <div><h2 class="heading bg-secondary text-white">Post New Ads</h2></div>
-        </center>
-  <div class="form-group">
-    <label for="img"><b>Upload Your Ads Here:</b></label>
-    <input type="file" name="ad" class="form-control" id="img" style="height: 40px; width: 40%" >
-    <button type="submit" name="btn_ad" class="btn btn-success" style="float: left; margin-left: 450px;
-    margin-top: -40px;">Upload</button>
-  </div>
-</form>
-  
-  </div>
+
 
   <div role="tabpanel" class="tab-pane" id="ads"> 
     
@@ -379,7 +366,7 @@ if(isset($_POST["btn"])){
 
                 mysqli_query($con, $query); 
 
-                echo "<script>alert('Pages has been uploaded...')</script>"; 
+                echo "<script>alert('Page has been uploaded...')</script>"; 
                  
                            
             }

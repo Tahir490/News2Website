@@ -100,8 +100,25 @@
 		    
               
 			  <form action="" method="get">
-              <span> Date:</span>
-                  <input type="date" name="search"/>
+
+              <span style="color: #fff;"> Date:</span>
+              <select class="form-control" name="date" >
+              <?php
+  include("includes/connect.php");
+   
+       $que = "SELECT DISTINCT date_to FROM pages";
+
+       $run = mysqli_query($con, $que);
+       while($row=mysqli_fetch_array($run)){
+
+            $date = $row['date_to'];      
+    ?>
+      
+          <option><?php echo $date; ?></option>
+          
+      
+                  <?php } ?>
+                  </select>
                   <button type="submit" name="btn" >Search</button>
               </form>
 		   </div>
