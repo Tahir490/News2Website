@@ -54,15 +54,19 @@ if(!$_SESSION['name']){
       <!-- Nav tabs -->
       <div class="card">
         <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation" class="active"><a href="#insert" aria-controls="home" role="tab" data-toggle="tab"><i class="fa fa-database"></i>  <span>Insert Pages</span></a></li>
-          <li role="presentation"><a href="#pages" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-file"></i>  <span>Pages</span></a></li>
-          <li role="presentation"><a href="#search" aria-controls="messages" role="tab" data-toggle="tab"><i class="fa fa-search"></i>  <span>Search</span></a></li>
+          <li role="presentation" class="active"><a href="#insert_pages" aria-controls="insert_pages" role="tab" data-toggle="tab"><i class="fa fa-database"></i>  <span>Insert Pages</span></a></li>
+          <li role="presentation"><a href="#pages" aria-controls="pages" role="tab" data-toggle="tab"><i class="fa fa-file"></i>  <span>Pages</span></a></li>
+          <li role="presentation"><a href="#insert_ads" aria-controls="insert_ads" role="tab" data-toggle="tab"><i class="fa fa-file"></i><span>Insert Ads</span></a></li>
+          <li role="presentation"><a href="#ads" aria-controls="ads" role="tab" data-toggle="tab"><i class="fa fa-file"></i><span>Ads</span></a></li>
+          <li role="presentation"><a href="#search" aria-controls="search" role="tab" data-toggle="tab"><i class="fa fa-search"></i><span>Search</span></a></li>
+          
+          
           
         </ul>
         
         <!-- Tab panes -->
         <div class="tab-content">
-          <div role="tabpanel" class="tab-pane active" id="insert">
+          <div role="tabpanel" class="tab-pane active" id="insert_pages">
             
             <form method="post" action="" enctype="multipart/form-data">
         <center>
@@ -99,9 +103,16 @@ if(!$_SESSION['name']){
   <button type="submit" name="btn" class="btn btn-success">Upload</button>
 </form>
 <center><font color="#A81008" size="8px"><?php echo @$_GET['delete']; ?></font></center>
-     <center><font color="#0851EE" size="8px"><?php echo @$_GET['update']; ?></font></center>
+<center><font color="#0851EE" size="8px"><?php echo @$_GET['update']; ?></font></center>
 
-          </div>
+  </div>
+ 
+  
+  
+  
+</form> 
+
+       
           <div role="tabpanel" class="tab-pane" id="pages"> 
             
                
@@ -110,9 +121,67 @@ if(!$_SESSION['name']){
            
             
 </div>
+
+ <div role="tabpanel" class="tab-pane" id="insert_ads"> 
+     <form method="post" action="" enctype="multipart/form-data">
+        <center>
+            <div><h2 class="heading bg-secondary text-white">Post New Ads</h2></div>
+        </center>
+  <div class="form-group">
+    <label for="img"><b>Upload Your Ads Here:</b></label>
+    <input type="file" name="ad" class="form-control" id="img" style="height: 40px; width: 40%" >
+    <button type="submit" name="btn_ad" class="btn btn-success" style="float: left; margin-left: 450px;
+    margin-top: -40px;">Upload</button>
+  </div>
+</form>
+  
+  </div>
+
+  <div role="tabpanel" class="tab-pane" id="ads"> 
+    
+ <table class="table table-bordered">
+
+            <tr class='bg-primary'> 
+                <td align='center'>#</td> 
+                <td align='center'>Ads</td>   
+                <td align='center'>Delete</td>
+                <td align='center'>Update</td>    
+           </tr> 
+
+  <?php
+  include("includes/connect.php");
+   
+       $que = "SELECT * FROM ads";
+       $run = mysqli_query($con, $que);
+       while($row=mysqli_fetch_array($run)){
+
+            $id = $row['id'];
+
+           $name = "uploads/ads"."/".$row['save_name'];
+
+            
+    ?>
+ 
+  <tr>
+       <td align="center" style="padding-top: 1cm;"><?php echo @$id; ?></td>
+      <td align="center" style="padding-top: 1cm;"><a href="<?php echo $name;?>">
+    <img src="<?php echo @$name; ?>" width="100" height="100" border="0"></a>
+  </td>
+  <td align="center" style="padding-top: 1cm;"><a href='delete.php?delete=<?php echo $id;?>' class="btn btn-danger">Delete</a>
+       
+      </td>
+       <td align="center" style="padding-top: 1cm;">
+        <a href='update_img.php?update=<?php echo $id;?>' class="btn btn-primary">Update</a>
+      </td> 
+</tr>
+     <?php } ?>
+  </table><br><br>
+   
+  
+  </div>
           <div role="tabpanel" class="tab-pane" id="search">
             
-             <div>
+  <div>
   <form  action="insert_post.php" method="get">
 
       <input type="date" name="search" />
@@ -183,7 +252,8 @@ if(!$_SESSION['name']){
   </table><br><br>
     <?php } ?>
           </div>
-         
+
+
         </div>
       </div>
     </div>
@@ -328,5 +398,59 @@ if(isset($_POST["btn"])){
             }
         }       
     }
+
+  ?>
+<?php
+include("includes/connect.php");
+  date_default_timezone_set("Asia/Karachi");
+  if(isset($_POST['btn_ad'])){
+  
+   if(isset($_FILES['ad'])){
+      $errors= array();
+       function GetImageExtension($imgtype)
+ {
+  if(empty($imgtype)) return false;
+  switch($imgtype)
+  { 
+  case 'image/bmp': return '.bmp';
+  case 'image/gif': return '.gif';
+  case 'image/jpeg': return '.jpg';
+  case 'image/png': return '.png';
+  default: return false;
+    }
+  } 
+  if (!empty($_FILES["ad"]["name"])) {
+    $file_name=$_FILES["ad"]["name"];
+    $temp_name=$_FILES["ad"]["tmp_name"];
+    $imgtype=$_FILES["ad"]["type"];
+    $ext= GetImageExtension($imgtype);
+    $imagename=date("d-m-Y")."-".time().$ext;
+    $target_path = "uploads/ads/".$imagename;
+    
+   }
+   }
+  
+   if(isset($_FILES["ad"])==false)
+        {
+            echo "<b>Please, Select the ad to upload!!!</b>";
+            return;
+        }
+    else {
+       $query = mysqli_query($con, "INSERT INTO ads (save_name) VALUES ('$imagename')");
+  }
+    
+
+  
+ 
+  //$row1_cnt = mysqli_num_rows($query);
+  if(move_uploaded_file($temp_name, $target_path) ) {
+    
+    
+    echo "<script>alert('Data has been inserted...')</script>"; 
+  } 
+  else{
+    exit("Error While uploading image on the server");
+  }
+  }
 
   ?>

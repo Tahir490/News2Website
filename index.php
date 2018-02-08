@@ -17,9 +17,23 @@
  <div id="ads">
   <table align="center">
     <tr>
+      <?php
+  include("includes/connect.php");
+   
+       $que = "SELECT * FROM ads WHERE id = 1";
+       $run = mysqli_query($con, $que);
+       while($row=mysqli_fetch_array($run)){
+
+            $id = $row['id'];
+
+           $name = "uploads/ads"."/".$row['save_name'];
+
+            
+    ?>
 	   <td>
-	     <a href="" target="_blank"><img src="images1/ads1.png" alt="image" width="317" height="90"  border="0"  /></a>
+	     <a href="<?php echo $name; ?>" target="_blank"><img src="<?php echo $name; ?>" alt="image" width="317" height="90"  border="0"  /></a>
 	   </td>
+      <?php } ?>
 	   <td>
 	     <a href="" target="_blank"><img src="images1/tggb.jpg" alt="image" width="317" height="90"  border="0" /></a>
 	   </td>
