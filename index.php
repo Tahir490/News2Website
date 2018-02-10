@@ -7,7 +7,24 @@
 <link rel="stylesheet" type="text/css" href="style1.css"/>
 <link rel="stylesheet" type="text/css" href="css/chromestyle.css" />
 <script type="text/javascript" src="js/chrome.js"></script>
-<script type="text/javascript" src="js/jsq.js"></script> 
+<script type="text/javascript" src="js/jsq.js"></script>
+<script type="text/javascript" src="js/ddpowerzoomer.js"> 
+ 
+/***********************************************
+* Image Power Zoomer- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for this script and 100s more
+***********************************************/
+ 
+</script>
+<script>
+   
+ 
+jQuery(document).ready(function($){ //fire on DOM ready
+	$('img#mainImage').addpowerzoom({magnifiersize:[450,200]})
+	$('img.mainImage').addpowerzoom({powerrange:[2,5]})
+})
+</script> 
 </head>
 <body>
 <div id="head">
@@ -277,7 +294,7 @@ $pid = @$_GET['pid'];
  <div id="maincontent">
  
   
-  <img id="mainImage" src="<?php echo $save; ?>" width="980" name="gallerya"/>
+  <img id="mainImage" src="<?php echo $save; ?>" width="980" name="mainImage"/>
 
 </div>
 
