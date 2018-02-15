@@ -518,8 +518,8 @@ if(isset($_GET['btn'])) {
 <div class="icons">
 <!--<a href="#"><img src="images1/icon1.jpg" border="0" class="iconimage" title="share"/></a> -->
 <a href="#"><img src="images1/twt.jpg" border="0" class="iconimage"  title="twitter"/></a> 
-<a href="#"><img src="images1/fb.jpg" border="0" class="iconimage"  title="facebook"/> </a>
-<a href="#"><img src="images1/utb.jpg" border="0" class="iconimage"   title="youtube"/></a></div>
+<a href="https://www.facebook.com/dailysadae.himalaya.7"><img src="images1/fb.jpg" border="0" class="iconimage"  title="facebook"/> </a>
+<a href="https://www.youtube.com/channel/UCZ3ufg03MkScpPISwHoogFg/featured?view_as=subscriber"><img src="images1/utb.jpg" border="0" class="iconimage"   title="youtube"/></a></div>
 </div>
 <script>
     $(document).ready(function(){
